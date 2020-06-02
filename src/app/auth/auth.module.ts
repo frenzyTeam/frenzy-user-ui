@@ -13,6 +13,6 @@ import { AuthService } from './auth.service';
   ],
   declarations: [LoginComponent, RegistrationComponent],
   providers: [
-    AuthService,
+    AuthService,]
 })
 export class AuthModule { }
