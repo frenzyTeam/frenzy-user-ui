@@ -1,0 +1,45 @@
+<div class="container registerPage">
+  <div class="row">
+    <div class="col-sm-9 col-md-7 col-lg-4 mx-auto">
+      <div class="card card-6">
+        <div class="card-heading my-3">
+          <h2 class="title">Create Account</h2>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="form-label-group">
+              <input type="text" id="inputEmail" class="form-control" placeholder="Name" autofocus>
+              <!-- <label for="Username">Username</label> -->
+            </div>
+            <!-- <div class="form-group">
+
+              <p-calendar class="calendar-class-registration" appendTo="body" placeholder="DD-MM-YYYY"
+                dateFormat="dd-mm-yy" dataType="string" [showIcon]="true" (onSelect)="validateReturnDate()"
+                onPaste="return false;">
+              </p-calendar>
+              </div> -->
+              <!-- <input type="text" id="inputEmail" class="form-control" placeholder="Username"   autofocus> -->
+              <!-- <label for="Username">Username</label> 
+            </div> -->
+            <div class="form-label-group">
+              <input type="text" id="userId" class="form-control" placeholder="User ID">
+              <!-- <label for="Username">Username</label> -->
+            </div>
+            <div class="form-label-group">
+              <input type="password" id="userPassword" class="form-control" placeholder="password">
+              <!-- <label for="Username">Username</label> -->
+            </div>
+            <div class="form-label-group">
+              <p-dropdown [style]="{'width':'100%'}" appendTo="body" placeholder="Select">
+              </p-dropdown>
+            </div>
+
+          </form>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

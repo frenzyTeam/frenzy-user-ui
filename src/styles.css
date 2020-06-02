@@ -1,0 +1,31 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../src/assets/style/primeng-override.scss";
+@import '../node_modules/primeng/resources/themes/omega/theme.css';
+
+@media (min-width: 768px) {
+    .sideToggle {
+      display: none;
+    }
+  }
+  
+  .hidetoggle {
+    color: #3f3f3f;
+    font-weight: 400;
+    text-decoration: none !important;
+    display: block;
+    margin: 0 -20px 25px;
+    padding: 8px 35px;
+    height: 64px;
+    line-height: 30px;
+    cursor: pointer;
+  
+    /* span {
+      font-size: 30px;
+      font-weight: 100;
+      margin-left: 6px;
+    }
+  
+    p {
+      margin: 0 -5px;
+    } */
+  }
