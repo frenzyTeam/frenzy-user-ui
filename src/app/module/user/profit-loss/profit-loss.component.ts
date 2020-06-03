@@ -10,7 +10,6 @@ export class ProfitLossComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log("hello")
   }
 
 }

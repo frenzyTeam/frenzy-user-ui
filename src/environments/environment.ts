@@ -9,7 +9,10 @@ export const environment = {
   port: 3001,
   auth: {
     register: 'api/auth/register',
-    subadminlist: 'api/auth/subAdminList'
+    subadminlist: 'api/auth/subAdminList',
+    login: 'api/auth/login',
+    addBalance: 'api/transaction/addBalance',
+    getTransaction: 'api/transaction/getTransaction/:userid'
   }
 };
 

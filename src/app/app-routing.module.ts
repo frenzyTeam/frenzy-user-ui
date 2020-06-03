@@ -14,7 +14,7 @@ const routes: Routes = [
     // canActivate: true,
   },
   {
-    path: 'betting',
+    path: 'app',
     loadChildren: './module/user/user.module#UserModule'
     
   }
