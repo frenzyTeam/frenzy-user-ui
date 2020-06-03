@@ -1,0 +1,72 @@
+<div class="container h-100" style="min-width: 100%;margin: 0;">
+  <div class="row">
+    <div class="col-md-3" style="border: 1px solid red;">sider</div>
+    <div class="col-md-9" style="border: 1px solid red;background: #EEEEEE;">
+      <h6>Summary</h6>
+      <div style="width: 100%;background:#ffffff;display: flex;min-height:75px;border-bottom: 2px solid #243A48;">
+        <div class="left">
+          <div class="balance-title">Your Balance</div>
+          <div class="balance-value">3420 <a style="font-size: 14px;">PTH</a></div>
+        </div>
+        <div class="right">
+          <div class="welcome-class">Welcome,</div>
+          <div class="info-details">View your account details here you can manage fund review and performance of your
+            Betting Activity </div>
+        </div>
+
+      </div>
+      <br>
+      <div style="width: 100%;background:#ffffff">
+        <div class="table-responsive">
+          <p-table class="table table-striped  table-hover" [value]="balanceOverview" [style]="{width:'100%'}">
+            <ng-template pTemplate="header">
+              <tr>
+                <th>
+                  s.No
+                </th>
+                <th>
+                  Date/Time
+                </th>
+                <th>
+                  Description
+                </th>
+                <th style="width: 15%">
+                  P&L
+                </th>
+                <th style="width: 15%">
+                  Balance
+                </th>
+
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-balOverview>
+              <tr>
+                <td>
+                  1
+                </td>
+                <td>
+                  10-3-2020 5:51 PM
+                </td>
+                <td>
+                  India Legends v Lanka Legends(MATCH_ODDS)
+                </td>
+                <td>
+                  5000.30
+                </td>
+                <td>
+                  400067.65
+                </td>
+
+              </tr>
+            </ng-template>
+
+          </p-table>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

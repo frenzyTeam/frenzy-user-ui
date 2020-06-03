@@ -4,12 +4,12 @@
 
 export const environment = {
   production: false,
-  url: "http://localhost",
+  url: "http://67.205.154.213",
   // url: "http://40.114.94.110",
   port: 3001,
   auth: {
-    register: 'auth/register',
-    subadminlist: 'auth/subAdminList'
+    register: 'api/auth/register',
+    subadminlist: 'api/auth/subAdminList'
   }
 };
 

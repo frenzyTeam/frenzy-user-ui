@@ -1,0 +1,31 @@
+.left{
+    float: left;
+    border-right: 1px solid lightgrey;
+    width: 40%;
+    line-height: normal;
+  }
+  .right{
+    float:right;
+    line-height: normal;
+  }
+  .balance-title{
+    padding-left: 14px;
+
+  }
+  .balance-value{
+   padding-left: 14px;
+   font-size: 28px;
+  }
+  .welcome-class{
+    font-size: 20px;
+    padding-left: 25px;
+    font-weight: bold;
+  }
+  .info-details{
+   font-size: 14px;
+   padding-left: 25px;
+  }
+  .table-responsive {
+   min-height: 0.01%;
+   overflow-x: auto;
+ }

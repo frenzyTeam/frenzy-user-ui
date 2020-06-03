@@ -13,21 +13,18 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
-    AppComponent,
-  
-   
-
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
-    AuthModule,
-    CoreModule,
-    UserModule,
-    AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    // AuthModule,
+    CoreModule,
+    // UserModule,
+    AppRoutingModule,
     // NgbModule
   ],
   providers: [UtilService],

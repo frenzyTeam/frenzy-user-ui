@@ -10,6 +10,30 @@
        <div class="clock-block">
         <i class="fa fa-clock-o icon-margin"></i>3:48:12 PM GMT+5
        </div>
+       <div class="my-account m-r-25">
+        <div class="btn-group">
+          <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user m-r-5"></i> My Account
+          </button>
+          <div class="dropdown-menu dropdown-menu-right">
+            <div  class="user-account">
+              <div class="left-tag" [pTooltip]="demo123456789876" tooltipPosition="top" tooltipEvent="hover">DemoUser1234455</div>
+              <div class="right-tag">GMT+5:30</div>
+            </div>
+            <a class="dropdown-item menu-item" href="#">My Profile</a>
+            <a class="dropdown-item menu-item" [routerLink]="['/betting/balance']">Balance Overview</a>
+            <a class="dropdown-item menu-item" href="#">Account Statement</a>
+            <a class="dropdown-item menu-item" href="#">My Bets</a>
+            <a class="dropdown-item menu-item" href="#">Bets History</a>
+            <a class="dropdown-item menu-item" [routerLink]="['/betting/profit-loss']">Profit & Loss</a>
+            <a class="dropdown-item menu-item" href="#">Bets History</a>
+             <div class="logout-btn"><button class="btn w-100" type="button">LOGOUT</button></div>
+          
+          </div>
+        </div>
+
+    
+       </div>
     </div>
 
   

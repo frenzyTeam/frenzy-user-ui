@@ -14,7 +14,7 @@ const routes: Routes = [
     // canActivate: true,
   },
   {
-    path: RouteConstant.ROUTE_DASHBOARD,
+    path: 'betting',
     loadChildren: './module/user/user.module#UserModule'
     
   }
