@@ -21,7 +21,7 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.subAdminList().subscribe((response) => {
+    this.authService.subAdminList().subscribe((response: []) => {
       response.forEach(element => {
         let json = {}
         json['label'] = element
@@ -34,7 +34,7 @@ export class RegistrationComponent implements OnInit {
   }
   onSubmit() {
     this.authService.registerUser({ data: this.register }).subscribe((response) => {
-      if (!response.error_status) {
+      if (!response['error_status']) {
         this.router.navigate(['/login']);
       }
     })

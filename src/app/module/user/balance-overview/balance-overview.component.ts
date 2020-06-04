@@ -13,7 +13,7 @@ export class BalanceOverviewComponent implements OnInit {
 
   ngOnInit() {
     this.userService.getTransactions().subscribe((resp) => {
-      this.transactionData = resp.data
+      this.transactionData = resp['data']
       this.accountBalance = this.transactionData[this.transactionData.length - 1]['balance']
     })
   }
