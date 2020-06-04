@@ -1,7 +1,6 @@
-<div class="container h-100" style="min-width: 100%;margin: 0;">
-  <div class="row">
-    <div class="col-md-3" style="border: 1px solid red;">sider</div>
-    <div class="col-md-9" style="border: 1px solid red;background: #EEEEEE;">
+<div class="col-md-10" style="min-width: 100%;padding-top: 1%;">
+  <div class="">
+    <div class="col-md-12">
       <h6>Summary</h6>
       <div style="width: 100%;background:#ffffff;display: flex;min-height:75px;border-bottom: 2px solid #243A48;">
         <div class="left">
@@ -45,13 +44,13 @@
                   {{i+1}}
                 </td>
                 <td>
-                  {{transaction.created_at}}
+                  {{transaction.created_at  | date: 'dd MMM, yyyy'}}
                 </td>
                 <td>
                   {{transaction.description}}
                 </td>
-                <td>
-                  {{transaction.profit_or_loss}}
+                <td [ngStyle]="{'color': transaction.profit_or_loss>0 ? 'green' : 'red'}">
+                  <b>{{transaction.profit_or_loss}}</b>
                 </td>
                 <td>
                   {{transaction.balance}}
