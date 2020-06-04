@@ -20,4 +20,9 @@ export class AuthService {
   onLogin(body) {
     return this.http.post(this.util.generateUrl(environment.auth.login), body)
   }
+  getProfile() {
+    let urlLink = this.util.generateUrl(environment.auth.profile)
+    urlLink = urlLink.replace(':userid', localStorage.getItem('userid'))
+    return this.http.get(urlLink)
+  }
 }

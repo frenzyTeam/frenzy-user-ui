@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  logo:string;
-  constructor() { }
+  logo: string;
+  details: any;
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
     this.logo = '../../../../assets/images/logo.png';
+  }
+  getProfile() {
+    this.authService.getProfile().subscribe((resp) => {
+      this.details = resp['data'];
+    })
   }
 
 }

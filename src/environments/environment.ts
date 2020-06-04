@@ -16,7 +16,8 @@ export const environment = {
     subadminlist: 'api/auth/subAdminList',
     login: 'api/auth/login',
     addBalance: 'api/transaction/addBalance',
-    getTransaction: 'api/transaction/getTransaction/:userid'
+    getTransaction: 'api/transaction/getTransaction/:userid',
+    profile: 'api/auth/profile/:userid'
   }
 };
 

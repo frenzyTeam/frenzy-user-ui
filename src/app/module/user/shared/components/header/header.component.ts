@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +9,23 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   logo: string;
-  constructor(private router: Router) {
+  details: any;
+  constructor(private router: Router, private authService: AuthService) {
   }
 
   ngOnInit() {
     this.logo = '../../../../assets/images/logo.png';
+    this.getProfile()
   }
   onLogout() {
     localStorage.removeItem('userid')
     localStorage.removeItem('token')
     this.router.navigate(['/login'])
+  }
+  getProfile() {
+    this.authService.getProfile().subscribe((resp) => {
+      this.details = resp['data'];
+    })
   }
 
 }
