@@ -21,8 +21,10 @@ export class RegistrationComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.authService.subAdminList().subscribe((response: []) => {
-      response.forEach(element => {
+    this.authService.subAdminList().subscribe((response) => {
+      let resparr: any = []
+      resparr = response
+      resparr.forEach(element => {
         let json = {}
         json['label'] = element
         json['value'] = element
