@@ -7,7 +7,7 @@ import * as moment from 'moment';
 export class MomentService {
 
   constructor() { }
-  getTimefromTimeZone(timezone){
-    return moment.
+  getTimefromTimeZone(timezone) {
+    return null
   }
 }
