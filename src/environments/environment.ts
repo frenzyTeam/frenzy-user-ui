@@ -7,6 +7,10 @@ export const environment = {
   url: "http://67.205.154.213",
   // url: "http://40.114.94.110",
   port: 3001,
+  token: {
+    me: 'api/me'
+
+  },
   auth: {
     register: 'api/auth/register',
     subadminlist: 'api/auth/subAdminList',
