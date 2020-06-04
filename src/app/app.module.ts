@@ -9,7 +9,7 @@ import { UserModule } from './module/user/user.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UtilService } from './core/services/util.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-
+import { ToastModule } from 'primeng/toast';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
@@ -26,6 +26,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     // UserModule,
     AppRoutingModule,
     // NgbModule
+    ToastModule
   ],
   providers: [UtilService],
   bootstrap: [AppComponent]
