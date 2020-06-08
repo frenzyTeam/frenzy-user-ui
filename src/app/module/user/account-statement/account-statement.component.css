@@ -1,0 +1,29 @@
+.account-title{
+    color:#D1AE2C;
+   
+}
+.account-table .ui-table-caption{
+    background: #DEE7E6;
+    border-bottom: 2px solid #243A48 ;
+}
+.account-table .ui-table table{
+    margin-top:1%;
+    table-layout: auto;
+}
+
+.account-table  .ui-table .ui-table-thead > tr > th{
+    background-color: #213B4A;
+    border: 1px solid #213B4A;
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .account-table  .ui-table .ui-table-thead>tr>th {
+      font-size: 13px;
+  }
+  .account-table .ui-table .ui-table-tbody>tr>td,.account-table  .ui-table .ui-table-tfoot>tr>td{
+       font-size: 14px;
+       white-space: nowrap;
+       overflow:hidden;
+   }
+

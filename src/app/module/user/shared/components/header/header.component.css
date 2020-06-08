@@ -5,13 +5,14 @@
     margin: 0;
     color:whitesmoke;
 }  */
-.container{
+.header-container{
     min-width: 100%;
     padding: 0;
     margin: 0;
     height: 70px;
     color:whitesmoke;
     background:#303030 ;
+    position: relative; 
     /* border: 1px solid white;
     margin:15px; */
   
@@ -115,7 +116,9 @@ text-align:left;
     padding-bottom: 2px; 
     padding-left: 12px;
     padding-right: 12px;
+    color: #4A2906;
 }
+
 .main-nav .navbar-nav .nav-item{
     border-right:1px solid lightgray;
   }
@@ -125,7 +128,7 @@ text-align:left;
     font-size: 12px;
 }
 .main-nav .navbar-nav a:hover{
-    color: white;
+    color: white ;
     background: black;
 }
 @media screen and (max-width:767px) {
@@ -223,6 +226,70 @@ color: #939393;
     line-height: 1;
     
 }
-
+.main-nav .navbar-light .navbar-nav .nav-link:hover{
+color: white;
+}
 
   
+.setting-popup {
+    position: absolute;
+    top: auto;
+    right: 3px;
+    width: 316px;
+    /* height: 200px; */
+    z-index: 9999;
+ 
+}
+.setting-popup .card{
+    /* border-radius: 5px; */
+    overflow: hidden;
+    padding: 0px;
+    border-top-left-radius:17px;
+    border-top-right-radius:17px;
+    
+
+}
+.setting-popup .card-header{
+    background: #FFC525;
+    color: black;
+    font-weight: bold;
+    padding: 6px 10px 6px 15px;;
+}
+.setting-popup .card-body{
+    padding: 0.25rem;
+}
+ .button-first-row{
+    background: #F7F7F7;
+     border: 1px solid #C6CBD1;
+
+     padding-top: 2px;
+     padding-bottom: 2px;
+     margin-left: 4px;
+     font-size: 13px;
+ }  
+ .w-70{
+     width: 70px;
+ }
+ .w-90{
+     width: 95px;
+ }
+   
+ .w-130{
+     width: 130px;
+ }
+ .btn-save{
+border-radius: 15px;
+background:#FFC525;
+color: black;
+font-weight: bold;
+ }
+ .btn-cancel{
+    border-radius: 15px;
+background:#F6F6F6;
+color: black;
+font-weight: normal; 
+ }
+ .setting-header{
+     font-size: 14px;
+ }
+    /* padding: 2px; */

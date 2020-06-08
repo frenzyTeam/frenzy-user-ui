@@ -23,4 +23,6 @@
   }
   .profit-loss-table .ui-table .ui-table-tbody>tr>td,.profit-loss-table  .ui-table .ui-table-tfoot>tr>td{
        font-size: 14px;
+       white-space: nowrap;
+       overflow:hidden;
    }

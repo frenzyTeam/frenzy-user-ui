@@ -22,8 +22,10 @@ import { InplayTableComponent } from './shared/components/inplay-table/inplay-ta
 import { ProfileComponent } from './profile/profile.component';
 import { MyBetComponent } from './my-bet/my-bet.component';
 import { SettingComponent } from './setting/setting.component';
+import {AccountStatementComponent} from './account-statement/account-statement.component';
+import { SideBarComponent } from './shared/components/side-bar/side-bar.component';
 // import { NgbdCarouselBasic } from './carousel-basic';
-
+import {FooterComponent} from './shared/components/footer/footer.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -35,8 +37,8 @@ import { SettingComponent } from './setting/setting.component';
     TabViewModule,
     NgbModule
   ],
-  declarations: [DashboardComponent, CricketComponent, TennisComponent, FootballComponent, HeaderComponent, ImageSliderComponent, UserComponent, ProfitLossComponent, BalanceOverviewComponent, HomeComponent, InPlayComponent, InplayTableComponent, ProfileComponent, MyBetComponent, SettingComponent],
-  exports: [HeaderComponent, ThemeModule, ImageSliderComponent, InplayTableComponent],
+  declarations: [DashboardComponent, CricketComponent, TennisComponent, FootballComponent,FooterComponent, HeaderComponent,SideBarComponent, ImageSliderComponent, UserComponent, ProfitLossComponent, BalanceOverviewComponent, HomeComponent, InPlayComponent, InplayTableComponent, ProfileComponent, MyBetComponent, SettingComponent,AccountStatementComponent],
+  exports: [HeaderComponent, ThemeModule, ImageSliderComponent, InplayTableComponent,SideBarComponent,FooterComponent],
   providers: [NgbCarouselConfig]
 })
 export class UserModule { }

@@ -36,3 +36,7 @@ width: 15%;
   .no-padding{
     padding: 0;
   }
+  .sidebar{
+    background:  #EEEEEE;
+    border: 1px solid #F5F5F7;
+ }

@@ -1,4 +1,4 @@
-<div class="container h-100">
+<div class="container header-container h-100">
   <!-- <div class="header-first-panel"> -->
   <div class="parent-div">
     <div class="logo-block">
@@ -24,7 +24,7 @@
           </div>
           <a class="dropdown-item menu-item"[routerLink]="['/app/profile']">My Profile</a>
           <a class="dropdown-item menu-item" [routerLink]="['/app/balance']">Balance Overview</a>
-          <a class="dropdown-item menu-item" href="#">Account Statement</a>
+          <a class="dropdown-item menu-item"[routerLink]="['/app/account-statement']">Account Statement</a>
           <a class="dropdown-item menu-item"[routerLink]="['/app/my-bet']">My Bets</a>
           <a class="dropdown-item menu-item" href="#">Bets History</a>
           <a class="dropdown-item menu-item" [routerLink]="['/app/profit-loss']">Profit & Loss</a>
@@ -58,11 +58,46 @@
         
         <a href="#" class="nav-item nav-link">Time Zone: GMT+5:30</a>
         <a href="#" class="nav-item nav-link"><i class="fa fa-television" aria-hidden="true"></i> Live</a>
-        <a href="#" class="nav-item nav-link"><i class="fa fa-cog"></i> Setting</a>
+        <a (click)="openSetting()" class="nav-item nav-link"><i class="fa fa-cog"></i> Setting</a>
       </div>
     </div>
   </nav>
 
+</div>
+<div *ngIf="openSettingModel" class="setting-popup" >
+  <div class="card">
+    <div class="card-header" >
+      <i class="fa fa-cog"></i> Setting
+      <i class="fa fa-close float-right" (click)="closeSetting()"></i>
+    
+    </div>
+    <div class="card-body">
+      <div class="setting-header ml-1">Quick Stake</div>
+      <div class="mt-1">
+        <button class="btn  button-first-row w-70">100</button>
+        <button class="btn  button-first-row w-70">500</button>
+        <button class="btn  button-first-row w-70">200</button>
+        <button class="btn  button-first-row w-70">300</button>
+      </div>
+      <div class="mt-1">
+        <button class="btn  button-first-row w-90">300</button>
+        <button class="btn  button-first-row w-90">1000</button>
+        <button class="btn  button-first-row w-90">400</button>
+       
+      </div>
+      <div class="mt-1 mr-2">
+        <button class="btn  button-first-row w-100">Edit Stake <i class="fa fa-edit"></i></button>
+      
+       
+      </div>
+      <div class="mt-2 ml-3">
+        <button class="btn btn-cancel  button-first-row w-130">Cancel </button>
+        <button class="btn btn-save button-first-row w-130">Save </button>
+      
+       
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="row no-padding" style="background: #EEEEEE;min-height: 100vh;margin-left: 0;margin-right: 0;">
@@ -98,3 +133,4 @@
   </div>
  
 </div>
+

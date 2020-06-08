@@ -11,6 +11,8 @@ import { FootballComponent } from './football/football.component';
 import { TennisComponent } from './tennis/tennis.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MyBetComponent } from './my-bet/my-bet.component';
+import {AccountStatementComponent} from './account-statement/account-statement.component';
+import { SettingComponent } from './setting/setting.component';
 const routes: Routes = [{
   //  { path: 'dashboard', component: DashboardComponent }
   path: '',
@@ -25,7 +27,9 @@ const routes: Routes = [{
     {path:'football',component:FootballComponent},
     {path:'tennis',component:TennisComponent},
     {path:'profile',component:ProfileComponent},
-    {path:'my-bet',component:MyBetComponent}
+    {path:'my-bet',component:MyBetComponent},
+    {path:'account-statement',component:AccountStatementComponent},
+    {path:'setting', component:SettingComponent}
 
   ]
 }];
