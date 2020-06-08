@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'app-balance-overview',
   templateUrl: './balance-overview.component.html',
-  styleUrls: ['./balance-overview.component.css']
+  styleUrls: ['./balance-overview.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BalanceOverviewComponent implements OnInit {
   transactionData: any = []

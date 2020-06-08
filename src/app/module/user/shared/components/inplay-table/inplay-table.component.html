@@ -1,0 +1,73 @@
+<div class="table-responsive" *ngIf="responseData.length>0;else noData">
+  <p-table class="table inPlay-table" [value]="responseData" [style]=" {width:'100%'}">
+    <ng-template pTemplate="header">
+      <tr *ngIf="!hideRow">
+        <th class="cricket-header">{{header}}</th>
+        <th class="cricket-header"></th>
+        <th class="cricket-header"></th>
+        <th class="cricket-header"></th>
+        <th class="cricket-header"></th>
+      </tr>
+      <tr>
+        <th class="w-30 table-header"></th>
+        <th class="w-25 table-header"></th>
+        <th class="w-15 table-header">1</th>
+        <th class="w-15 table-header">x</th>
+        <th class="w-15 table-header">2</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-data>
+     
+        <tr>
+          <td class="w-30">
+            <div class="truncate">{{data.matchName}}</div>
+          </td>
+          <td class="w-25">
+            <div>{{data.date}}</div>
+          </td>
+          <td class="w-15">
+            <div style="display: flex;">
+              <span class="bet-value1 f-w-bold text-center">{{data.bat1.x}}</span>
+              <span class="bet-value2 f-w-bold text-center">{{data.bat1.y}}</span>
+            </div>
+          </td>
+          <td class="w-15">
+            <div style="display: flex;">
+              <span class="bet-value1 f-w-bold text-center">{{data.batx.x}}</span>
+              <span class="bet-value2 f-w-bold text-center">{{data.batx.y}}</span></div>
+    
+          </td>
+          <td class="w-15">
+            <div style="display: flex;">
+              <span class="bet-value1 f-w-bold text-center">{{data.bat2.x}}</span>
+              <span class="bet-value2 f-w-bold text-center">{{data.bat2.y}}</span></div>
+          </td>
+        </tr>
+    
+  
+  
+    </ng-template>
+  </p-table>
+</div>
+<ng-template #noData>
+  <p-table class="table inPlay-table" [value]="responseData" [style]=" {width:'100%'}">
+    <ng-template pTemplate="header">
+      <tr>
+        <th class="cricket-header">{{header}}</th>
+        <th class="cricket-header"></th>
+        <th class="cricket-header"></th>
+        <th class="cricket-header"></th>
+        <th class="cricket-header"></th>
+      </tr>
+      <tr>
+        <th class="w-30 table-header"></th>
+        <th class="w-25 table-header"></th>
+        <th class="w-15 table-header">1</th>
+        <th class="w-15 table-header">x</th>
+        <th class="w-15 table-header">2</th>
+      </tr>
+      <tr class="text-center"><th colspan="12" style="font-weight: normal;font-size: 13px;color: #EC7289;">No Record</th></tr>
+    </ng-template>
+   <!-- No record found -->
+    </p-table>
+</ng-template>

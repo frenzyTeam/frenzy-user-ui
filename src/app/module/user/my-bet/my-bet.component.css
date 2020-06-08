@@ -1,0 +1,30 @@
+.my-bet-title{
+    color:#2B4F67;
+   
+}
+.bet-table .ui-table-caption{
+    background: #DEE7E6;
+    border-bottom: 2px solid #243A48 ;
+}
+.bet-table .ui-table table{
+    margin-top:1%;
+    table-layout: auto;
+}
+
+.bet-table  .ui-table .ui-table-thead > tr > th{
+    background-color: #213B4A;
+    border: 1px solid #213B4A;
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .bet-table  .ui-table .ui-table-thead>tr>th {
+      font-size: 13px;
+  }
+  .bet-table .ui-table .ui-table-tbody>tr>td,.bet-table  .ui-table .ui-table-tfoot>tr>td{
+       font-size: 14px;
+   }
+   .table-responsive{
+       width: 100%;
+       overflow-x: auto;
+   }

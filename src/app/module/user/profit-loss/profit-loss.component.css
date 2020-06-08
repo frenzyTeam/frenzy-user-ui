@@ -1,0 +1,26 @@
+.profit-loss-title{
+    color:#D1AE2C;
+   
+}
+.profit-loss-table .ui-table-caption{
+    background: #DEE7E6;
+    border-bottom: 2px solid #243A48 ;
+}
+.profit-loss-table .ui-table table{
+    margin-top:1%;
+    table-layout: auto;
+}
+
+.profit-loss-table  .ui-table .ui-table-thead > tr > th{
+    background-color: #D1AE2C;
+    border: 1px solid #D1AE2C;
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .profit-loss-table  .ui-table .ui-table-thead>tr>th {
+      font-size: 13px;
+  }
+  .profit-loss-table .ui-table .ui-table-tbody>tr>td,.profit-loss-table  .ui-table .ui-table-tfoot>tr>td{
+       font-size: 14px;
+   }

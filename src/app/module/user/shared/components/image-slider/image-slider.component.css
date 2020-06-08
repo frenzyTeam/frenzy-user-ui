@@ -1,0 +1,10 @@
+.carousel-item{
+    /* height:160px; */
+}
+.carousel-inner{
+border:none;
+}
+.picsum-img-wrapper img{
+    width: 100%;
+    height: 160px;
+}

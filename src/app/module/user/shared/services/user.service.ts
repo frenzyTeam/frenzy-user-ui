@@ -16,7 +16,8 @@ export class UserService {
   }
   getTransactions() {
     let urlLink = this.util.generateUrl(environment.auth.getTransaction)
-    urlLink = urlLink.replace(':userid', localStorage.getItem('userid'))
+      urlLink = urlLink.replace(':userid', localStorage.getItem('userid'))
+    // urlLink = urlLink.replace(':userid', 6)
     return this.http.get(urlLink)
   }
 }

@@ -22,10 +22,10 @@
               {{details? details.user_name:null}}</div>
             <div class="right-tag">GMT+5:30</div>
           </div>
-          <a class="dropdown-item menu-item" href="#">My Profile</a>
+          <a class="dropdown-item menu-item"[routerLink]="['/app/profile']">My Profile</a>
           <a class="dropdown-item menu-item" [routerLink]="['/app/balance']">Balance Overview</a>
           <a class="dropdown-item menu-item" href="#">Account Statement</a>
-          <a class="dropdown-item menu-item" href="#">My Bets</a>
+          <a class="dropdown-item menu-item"[routerLink]="['/app/my-bet']">My Bets</a>
           <a class="dropdown-item menu-item" href="#">Bets History</a>
           <a class="dropdown-item menu-item" [routerLink]="['/app/profit-loss']">Profit & Loss</a>
           <a class="dropdown-item menu-item" href="#">Bets History</a>
@@ -47,11 +47,11 @@
 
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav">
-        <a href="#" class="nav-item nav-link active">Home</a>
-        <a href="#" class="nav-item nav-link">In-Play</a>
-        <a href="#" class="nav-item nav-link">Cricket</a>
-        <a href="#" class="nav-item nav-link">Football</a>
-        <a href="#" class="nav-item nav-link">Tennis</a>
+        <a [routerLink]="['/app/home']" class="nav-item nav-link active">Home</a>
+        <a [routerLink]="['/app/in-play']" class="nav-item nav-link">In-Play</a>
+        <a [routerLink]="['/app/cricket']" class="nav-item nav-link">Cricket</a>
+        <a [routerLink]="['/app/football']" class="nav-item nav-link">Football</a>
+        <a [routerLink]="['/app/tennis']" class="nav-item nav-link">Tennis</a>
         <!-- <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a> -->
       </div>
       <div class="navbar-nav ml-auto">
@@ -64,8 +64,9 @@
   </nav>
 
 </div>
-<div class="col-md-12 col-sm-12 no-padding" style="display:flex">
-  <div class="sidebar col-md-2 col-sm-4" style="height: 100%;padding: 10px;">
+
+<div class="row no-padding" style="background: #EEEEEE;min-height: 100vh;margin-left: 0;margin-right: 0;">
+  <div class="sidebar col-md-2  col-12 col-sm-4" style="height: 100%;padding:8px;background: white;">
     <div class="sports-block col-md-12 col-sm-12">
       <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
       <span class="float-right"> Sports</span>
@@ -92,5 +93,8 @@
 
     </div>
   </div>
-  <router-outlet></router-outlet>
+  <div class="col-md-10 col-12" style="padding:8px;">
+    <router-outlet></router-outlet>
+  </div>
+ 
 </div>

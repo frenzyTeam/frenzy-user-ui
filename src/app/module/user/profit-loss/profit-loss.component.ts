@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewEncapsulation } from '@angular/core';
 import { UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'app-profit-loss',
   templateUrl: './profit-loss.component.html',
-  styleUrls: ['./profit-loss.component.css']
+  styleUrls: ['./profit-loss.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProfitLossComponent implements OnInit {
   transactionData: any;

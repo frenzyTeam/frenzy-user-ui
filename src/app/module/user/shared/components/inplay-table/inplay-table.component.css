@@ -1,0 +1,59 @@
+.table-responsive {
+    min-height: 0.01%;
+    overflow-x: auto;
+  }
+   .inPlay-table .ui-table table{
+     table-layout: auto;
+  } 
+  .inPlay-table .ui-table .ui-table-tbody>tr>td,.inPlay-table  .ui-table .ui-table-tfoot>tr>td{
+    font-size: 12px;
+    border: none;
+    white-space: nowrap;
+    overflow:hidden;
+}
+/* .inPlay-table .ui-table .ui-table-thead>tr:nth-child(1) {
+    background: #D7C45E;
+} */
+/* .content-body table tbody tr:first-child {
+    border-top: 0 none;
+  } */
+.bet-value1{
+    width: 48%;
+    background: #70BDEB;
+    color: black;
+    
+}
+.bet-value2{
+    margin-left: 2px;
+    width: 48%;
+    background:  #F0ACB7;
+    color: black;
+   
+}
+.inPlay-table .ui-table .ui-table-thead > tr .cricket-header{
+    background-color:#D7C45E;
+    border: none;
+    font-weight: normal;
+    font-size: 13px;
+    padding: 6px;
+    /* height: 25px; */
+}
+.inPlay-table .ui-table .ui-table-thead > tr .table-header {
+    background:#CCD6DF;
+    text-align:center;
+    font-weight: normal;
+    border: none;
+   
+
+}
+.inPlay-table .ui-table .ui-table-thead > tr {
+    /* line-height: unset; */
+    height: 25px;
+    line-height: 0.9;
+}
+.truncate{
+    width: 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

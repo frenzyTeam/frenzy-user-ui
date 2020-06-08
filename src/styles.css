@@ -8,24 +8,31 @@
     }
   }
   
-  .hidetoggle {
-    color: #3f3f3f;
-    font-weight: 400;
-    text-decoration: none !important;
-    display: block;
-    margin: 0 -20px 25px;
-    padding: 8px 35px;
-    height: 64px;
-    line-height: 30px;
-    cursor: pointer;
-  
-    /* span {
-      font-size: 30px;
-      font-weight: 100;
-      margin-left: 6px;
-    }
-  
-    p {
-      margin: 0 -5px;
-    } */
+ 
+  .f-w-bold{
+    font-weight: bold;
+  }
+  .f-w-normal{
+    font-weight: normal;
+  }
+  .w-10{
+    width: 10%;
+  }
+  .w-20{
+    width: 20%;
+  }
+  .w-30{
+    width: 30%;
+  }
+  .w-25{
+    width: 25%;
+  }
+  .w-15{
+width: 15%;
+  }
+  .w-35{
+    width: 35%;
+  }
+  .no-padding{
+    padding: 0;
   }

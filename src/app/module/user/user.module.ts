@@ -13,6 +13,17 @@ import { ProfitLossComponent } from './profit-loss/profit-loss.component';
 import { BalanceOverviewComponent } from './balance-overview/balance-overview.component';
 import { TooltipModule } from 'primeng/tooltip';
 import { TableModule } from 'primeng/table';
+import { HomeComponent } from './home/home.component';
+import { TabViewModule } from 'primeng/tabview';
+import { NgbModule, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { InPlayComponent } from './in-play/in-play.component';
+import { ImageSliderComponent } from './shared/components/image-slider/image-slider.component';
+import { InplayTableComponent } from './shared/components/inplay-table/inplay-table.component';
+import { ProfileComponent } from './profile/profile.component';
+import { MyBetComponent } from './my-bet/my-bet.component';
+import { SettingComponent } from './setting/setting.component';
+// import { NgbdCarouselBasic } from './carousel-basic';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -20,9 +31,12 @@ import { TableModule } from 'primeng/table';
     SharedModule,
     ThemeModule,
     TooltipModule,
-    TableModule
+    TableModule,
+    TabViewModule,
+    NgbModule
   ],
-  declarations: [DashboardComponent, CricketComponent, TennisComponent, FootballComponent, HeaderComponent, UserComponent, ProfitLossComponent, BalanceOverviewComponent],
-  exports: [HeaderComponent]
+  declarations: [DashboardComponent, CricketComponent, TennisComponent, FootballComponent, HeaderComponent, ImageSliderComponent, UserComponent, ProfitLossComponent, BalanceOverviewComponent, HomeComponent, InPlayComponent, InplayTableComponent, ProfileComponent, MyBetComponent, SettingComponent],
+  exports: [HeaderComponent, ThemeModule, ImageSliderComponent, InplayTableComponent],
+  providers: [NgbCarouselConfig]
 })
 export class UserModule { }

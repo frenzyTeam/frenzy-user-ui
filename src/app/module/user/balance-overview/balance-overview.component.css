@@ -15,17 +15,73 @@
   .balance-value{
    padding-left: 14px;
    font-size: 28px;
+   color: #CFAB3B;
+   /* font-weight: bold; */
+   
   }
   .welcome-class{
     font-size: 20px;
     padding-left: 25px;
-    font-weight: bold;
+    /* font-weight: bold; */
   }
   .info-details{
    font-size: 14px;
    padding-left: 25px;
+   color: #DBCE7F;
+   /* font-weight: bold; */
+   line-height: normal;
+   padding-bottom: 5px;
   }
   .table-responsive {
    min-height: 0.01%;
    overflow-x: auto;
  }
+ .balance-value a{
+   font-size: 14px;
+   color:#BCB6C0;
+  
+  }
+  .balance-table .ui-table table{
+    table-layout: auto;
+  }
+  .balance-table .ui-table .ui-table-thead > tr > th{
+    background-color: #243A48;
+    border: 1px solid #243A48;
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .balance-table .ui-table .ui-table-thead>tr>th {
+    font-size: 13px;
+}
+.balance-table .ui-table .ui-table-tbody>tr>td,.profit-loss-table  .ui-table .ui-table-tfoot>tr>td{
+     font-size: 14px;
+ }
+  @media screen and (max-width:767px) {
+  
+
+.balance-title {
+    padding-left: 3px;
+    font-size: 12px;
+}
+  .left{
+    float: left;
+    border-right: 1px solid lightgrey;
+    width:60%;
+    line-height: normal;
+  }
+  .balance-value a {
+    font-size: 9px;
+    color: #BCB6C0;
+}
+.balance-value {
+  padding-left: 3px;
+  font-size: 16px;
+  color: #CFAB3B;
+}
+  }
+  .empty-table{
+background:#243A48;
+color:white;
+  }
+   /* .ui-table .ui-table-tfoot > tr > td */
