@@ -4,11 +4,14 @@
     <div class="logo-block">
       <img class="logoImage" src="{{logo}}">
     </div>
-    <div class="calendar-block">
+    <div class="calendar-block" *ngIf="showDateTimeBlock">
       <i class="fa fa-calendar-check-o icon-margin"></i>Mar 11, 2020
     </div>
-    <div class="clock-block">
+    <div class="clock-block" *ngIf="showDateTimeBlock">
       <i class="fa fa-clock-o icon-margin"></i>3:48:12 PM GMT+5
+    </div>
+    <div class="date-time-block" *ngIf="!showDateTimeBlock">
+      <i class="fa fa-calendar-check-o icon-margin"></i>Mar 11, 2020
     </div>
     <div class="my-account m-r-25">
       <div class="btn-group">
@@ -28,7 +31,6 @@
           <a class="dropdown-item menu-item"[routerLink]="['/app/my-bet']">My Bets</a>
           <a class="dropdown-item menu-item" href="#">Bets History</a>
           <a class="dropdown-item menu-item" [routerLink]="['/app/profit-loss']">Profit & Loss</a>
-          <a class="dropdown-item menu-item" href="#">Bets History</a>
           <div class="logout-btn" (click)="onLogout()"><button class="btn w-100" type="button">LOGOUT</button></div>
 
         </div>

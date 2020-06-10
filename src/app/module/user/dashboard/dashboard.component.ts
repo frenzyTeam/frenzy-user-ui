@@ -8,7 +8,6 @@ import { sideBarAnimation } from '../../shared/animations/side-bar.animation';
 })
 export class DashboardComponent implements OnInit {
   logo:string;
-  showSideBar:boolean=false;
   hidetoggleHTML: string;
   // @HostListener('window:resize', ['$event'])
   // onResize(event) {

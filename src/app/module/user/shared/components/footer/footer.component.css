@@ -2,8 +2,41 @@
     background: white;
 }
 .border-col{
-    border:1px solid green
+  
+    padding-left: 8px;
+    padding-right: 4px;
 }
 .f-s-13{
     font-size: 13px;
 }
+.f-s-10{
+    font-size: 10px;
+}
+.font-power{
+font-size: 12px;
+}
+.font-omithub{
+    font-size: 13px;
+}
+@media (max-width: 1024px) {
+    .f-s-13{
+        font-size: 8px;
+    }
+    .power{
+        padding: 2px;
+    }
+    .font-power{
+    font-size: 10px;
+    }
+    .font-omithub{
+        font-size: 10px;
+    }
+    .f-s-10{
+        font-size: 8px;
+    }
+    img{
+        width: 50px;
+        height: 30px;
+    }
+  }
+  

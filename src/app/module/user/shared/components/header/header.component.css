@@ -135,6 +135,26 @@ text-align:left;
     .main-nav .navbar-nav .nav-item{
         border-bottom:1px solid lightgray;
       }
+    
+        .logoImage {
+            padding: 7px;
+            height: 60px;
+            width: 65px;
+        }
+        .date-time-block{
+           
+                margin-left:1%;
+                margin-top:auto;
+                margin-bottom:auto;
+                font-size: 10px;
+             
+        }
+        .icon-margin{
+            margin-right:2px ;
+            color: #FFC626;
+            font-size: 12px;
+        }
+      
   }
   /* @media screen and (min-width:768px) {
     .nav-main .navbar-nav .nav-item{

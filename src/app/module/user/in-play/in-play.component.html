@@ -1,51 +1,51 @@
 <div class="row" style="margin-left:0;margin-right:0">
   <div class="col-md-8 " style="padding-left:4px;padding-right: 4px ;">
     <app-image-slider></app-image-slider>
-    <div class="inPlay-tab" style="margin-top:5px;">
+    <div class="inPlay-tab" style="margin-top:5px;" (click)="getSelectedHeader()">
 
 
       <p-tabView class="inPlay-tab" [activeIndex]="index" (onChange)="handleChange($event)">
 
 
         <p-tabPanel header="In-Play">
-          <div class="cricket-box" >
-            <app-inplay-table [tableArr]="cricketArr" [header]="'Cricket'"></app-inplay-table>
+          <div class="cricket-box">
+            <app-inplay-table [tableArr]="cricketInplayArr" [header]="'Cricket'"></app-inplay-table>
 
           </div>
-          <div class="football-box mt-2" >
-            <app-inplay-table [tableArr]="footballArr" [header]="'Football'"></app-inplay-table>
+          <div class="football-box mt-2">
+            <app-inplay-table [tableArr]="footballInplayArr" [header]="'Football'"></app-inplay-table>
 
           </div>
-          <div class="tennis-box mt-2" >
-            <app-inplay-table [tableArr]="tennisArr" [header]="'Tennis'"></app-inplay-table>
+          <div class="tennis-box mt-2">
+            <app-inplay-table [tableArr]="tennisInplayArr" [header]="'Tennis'"></app-inplay-table>
 
           </div>
         </p-tabPanel>
         <p-tabPanel header="Today">
-          <div class="cricket-box" >
-            <app-inplay-table [tableArr]="cricketArr" [header]="'Cricket'"></app-inplay-table>
+          <div class="cricket-box">
+            <app-inplay-table [tableArr]="cricketTodayArr" [header]="'Cricket'"></app-inplay-table>
 
           </div>
-          <div class="football-box mt-2" >
-            <app-inplay-table [tableArr]="footballArr" [header]="'Football'"></app-inplay-table>
+          <div class="football-box mt-2">
+            <app-inplay-table [tableArr]="footballTodayArr" [header]="'Football'"></app-inplay-table>
 
           </div>
-          <div class="tennis-box mt-2" >
-            <app-inplay-table [tableArr]="tennisArr" [header]="'Tennis'"></app-inplay-table>
+          <div class="tennis-box mt-2">
+            <app-inplay-table [tableArr]="tennisTodayArr" [header]="'Tennis'"></app-inplay-table>
 
           </div>
         </p-tabPanel>
         <p-tabPanel header="Tommorow">
           <div class="cricket-box">
-            <app-inplay-table [tableArr]="cricketArr" [header]="'Cricket'"></app-inplay-table>
+            <app-inplay-table [tableArr]="cricketTomorrowArr" [header]="'Cricket'"></app-inplay-table>
 
           </div>
-          <div class="football-box mt-2" >
-            <app-inplay-table [tableArr]="footballArr" [header]="'Football'"></app-inplay-table>
+          <div class="football-box mt-2">
+            <app-inplay-table [tableArr]="footballTomorrowArr" [header]="'Football'"></app-inplay-table>
 
           </div>
-          <div class="tennis-box mt-2" >
-            <app-inplay-table [tableArr]="tennisArr" [header]="'Tennis'"></app-inplay-table>
+          <div class="tennis-box mt-2">
+            <app-inplay-table [tableArr]="tennisTomorrowArr" [header]="'Tennis'"></app-inplay-table>
 
           </div>
         </p-tabPanel>
@@ -68,3 +68,4 @@
     <app-side-bar></app-side-bar>
   </div>
 </div>
+<app-footer></app-footer>

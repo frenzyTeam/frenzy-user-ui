@@ -26,6 +26,7 @@ import {AccountStatementComponent} from './account-statement/account-statement.c
 import { SideBarComponent } from './shared/components/side-bar/side-bar.component';
 // import { NgbdCarouselBasic } from './carousel-basic';
 import {FooterComponent} from './shared/components/footer/footer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
@@ -35,7 +36,9 @@ import {FooterComponent} from './shared/components/footer/footer.component';
     TooltipModule,
     TableModule,
     TabViewModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   declarations: [DashboardComponent, CricketComponent, TennisComponent, FootballComponent,FooterComponent, HeaderComponent,SideBarComponent, ImageSliderComponent, UserComponent, ProfitLossComponent, BalanceOverviewComponent, HomeComponent, InPlayComponent, InplayTableComponent, ProfileComponent, MyBetComponent, SettingComponent,AccountStatementComponent],
   exports: [HeaderComponent, ThemeModule, ImageSliderComponent, InplayTableComponent,SideBarComponent,FooterComponent],

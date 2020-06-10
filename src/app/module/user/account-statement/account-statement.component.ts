@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { UserService } from '../shared/services/user.service';
 
 @Component({
   selector: 'app-account-statement',
@@ -8,15 +9,13 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class AccountStatementComponent implements OnInit {
   accountData:any=[];
-  constructor() { }
+  constructor(private userService:UserService) { }
 
   ngOnInit() {
-    this.accountData=[{
-      match:"India Legends V Shri lanka Legends (MATCH_ODDS)",
-      credit_debit:"3000",
-      balance:"24567",
-      date:"12-22-1222 4:30 PM"
-    }]
+    this.userService.getTransactions().subscribe((resp) => {
+      this.accountData = resp['data'];
+    });
+   
   }
 
 }

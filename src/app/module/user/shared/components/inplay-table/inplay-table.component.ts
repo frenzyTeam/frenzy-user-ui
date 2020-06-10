@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-inplay-table',
@@ -6,7 +6,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
   styleUrls: ['./inplay-table.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class InplayTableComponent implements OnInit {
+export class InplayTableComponent implements OnInit ,OnChanges{
   @Input() tableArr = [];
   responseData=[];
   @Input() header:string=null;
@@ -14,7 +14,10 @@ export class InplayTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.tableArr,this.header)
+   
+  }
+  ngOnChanges(){
+    console.log(this.tableArr,this.header);
     this.responseData=this.tableArr;
   }
 

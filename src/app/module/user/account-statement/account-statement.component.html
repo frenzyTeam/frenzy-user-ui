@@ -37,16 +37,16 @@
                 {{i+1}}
               </td>
               <td>
-              {{account.match}}
+              {{account.description}}
               </td>
-              <td>
-           {{account.credit_debit}}
+              <td [ngStyle]="{'color': account.profit_or_loss>0 ? 'green' : 'red'}">
+           {{account.profit_or_loss}}
               </td>
               <td>
             {{account.balance}}
               </td>
               <td>
-              {{account.date}}
+              {{account.created_at  | date: 'dd MMM, yyyy'}}
               </td>
              
           

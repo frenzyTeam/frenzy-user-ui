@@ -16,7 +16,7 @@ export class BalanceOverviewComponent implements OnInit {
     this.userService.getTransactions().subscribe((resp) => {
       this.transactionData = resp['data']
       this.accountBalance = this.transactionData.length>0? this.transactionData[this.transactionData.length - 1]['balance']: 0
-    })
+    });
   }
 
 }

@@ -4,7 +4,8 @@
     <div class="float-left">
       <h6>Account Details</h6>
     </div>
-    <div class="float-right"><button class="btn btn-custom text-right" (click)="updateDetails()"><i class="fa fa-pencil mr-1"></i>edit</button></div>
+    <div class="float-right"><button class="btn btn-custom text-right" (click)="updateDetails()" *ngIf="displayEditButton"><i
+          class="fa fa-pencil mr-1"></i>edit</button></div>
   </div>
   <div class="row mt-2">
     <div class="col-md-6">
@@ -17,20 +18,29 @@
             <!-- <ng-container> -->
             <div class="data-input">
               <label class="float-left mb-0">User Name</label>
-              <label class="float-right mb-0 f-c-g">Parita</label>
+              <label class="float-right mb-0 f-c-g">{{userName}}</label>
             </div>
-            <div class="data-input">
+            <div class="data-input"  *ngIf="!isEditable">
               <label class="float-left mb-0">Email</label>
-              <label class="float-right mb-0 f-c-g">Parita</label>
+              <label class="float-right mb-0 f-c-g">{{userEmail}}</label>
+            </div>
+            <div class="data-input-edit" *ngIf="isEditable">
+              <label style="font-size: 12px;" class="mb-0">Email</label>
+              <input type="text" class="w-100 input-box" [(ngModel)]="userEmail">
             </div>
             <div class="data-input" *ngIf="!isEditable">
               <label class="float-left mb-0">Password</label>
-              <label class="float-right mb-0 f-c-g">1234</label>
+              <!-- <label class="float-right mb-0 f-c-g">{{password}}</label> -->
             </div>
+           
             <div class="data-input-edit" *ngIf="isEditable">
-              <label style="font-size: 12px;" class="mb-0">Password</label>
-            <input type="password"  class="w-100 input-box">
+              <label style="font-size: 12px;" class="mb-0">New Password</label>
+              <input type="password" class="w-100 input-box" [(ngModel)]="password">
             </div>
+            <!-- <div class="data-input-edit" *ngIf="isEditable">
+              <label style="font-size: 12px;" class="mb-0">Confirm Password</label>
+              <input type="password" class="w-100 input-box" [(ngModel)]="confirmPassword">
+            </div> -->
 
 
           </div>
@@ -44,51 +54,51 @@
           </div>
           <div class="card-body">
             <!-- <ng-container> -->
-              <ng-container *ngIf="!isEditable">
-                <div class="data-input">
-                  <label class="float-left mb-0">Address</label>
-                  <label class="float-right mb-0 f-c-g">Parita</label>
-                </div>
-                <div class="data-input">
-                  <label class="float-left mb-0 ">Town/city</label>
-                  <label class="float-right mb-0 f-c-g">Parita</label>
-                </div>
-                <div class="data-input">
-                  <label class="float-left mb-0 ">Country</label>
-                  <label class="float-right mb-0 f-c-g">1234</label>
-                </div>
-                <div class="data-input">
-                  <label class="float-left mb-0">Country/State</label>
-                  <label class="float-right mb-0 f-c-g">1234</label>
-                </div>
-                <div class="data-input">
-                  <label class="float-left mb-0">Postcode</label>
-                  <label class="float-right mb-0 f-c-g">1234</label>
-                </div>
-    
-              </ng-container>
-              <ng-container *ngIf="isEditable">
-                <div class="data-input-edit" >
-                  <label style="font-size: 12px;" class="mb-0">Address</label>
-                <input type="text"  class="w-100 input-box">
-                </div>
-                <div class="data-input-edit">
-                  <label style="font-size: 12px;" class="mb-0">Town/city</label>
-                <input type="text"  class="w-100 input-box">
-                </div>
-                <div class="data-input-edit">
-                  <label style="font-size: 12px;" class="mb-0">Country</label>
-                <input type="text"  class="w-100 input-box">
-                </div>
-                <div class="data-input-edit" >
-                  <label style="font-size: 12px;" class="mb-0">Country/State</label>
-                <input type="text"  class="w-100 input-box">
-                </div>
-                <div class="data-input-edit">
-                  <label style="font-size: 12px;" class="mb-0">Postcode</label>
-                <input type="text"  class="w-100 input-box">
-                </div>
-                </ng-container>
+            <ng-container *ngIf="!isEditable">
+              <div class="data-input">
+                <label class="float-left mb-0">Address</label>
+                <label class="float-right mb-0 f-c-g">{{address}}</label>
+              </div>
+              <div class="data-input">
+                <label class="float-left mb-0 ">Town/city</label>
+                <label class="float-right mb-0 f-c-g">{{town_city}}</label>
+              </div>
+              <div class="data-input">
+                <label class="float-left mb-0 ">Country</label>
+                <label class="float-right mb-0 f-c-g">{{country}}</label>
+              </div>
+              <div class="data-input">
+                <label class="float-left mb-0">Country/State</label>
+                <label class="float-right mb-0 f-c-g">{{state}}</label>
+              </div>
+              <div class="data-input">
+                <label class="float-left mb-0">Postcode</label>
+                <label class="float-right mb-0 f-c-g">{{postCode}}</label>
+              </div>
+
+            </ng-container>
+            <ng-container *ngIf="isEditable">
+              <div class="data-input-edit">
+                <label style="font-size: 12px;" class="mb-0">Address</label>
+                <input type="text" class="w-100 input-box" [(ngModel)]="address">
+              </div>
+              <div class="data-input-edit">
+                <label style="font-size: 12px;" class="mb-0">Town/city</label>
+                <input type="text" class="w-100 input-box" [(ngModel)]="town_city">
+              </div>
+              <div class="data-input-edit">
+                <label style="font-size: 12px;" class="mb-0">Country</label>
+                <input type="text" class="w-100 input-box" [(ngModel)]="country">
+              </div>
+              <div class="data-input-edit">
+                <label style="font-size: 12px;" class="mb-0">Country/State</label>
+                <input type="text" class="w-100 input-box" [(ngModel)]="state">
+              </div>
+              <div class="data-input-edit">
+                <label style="font-size: 12px;" class="mb-0">Postcode</label>
+                <input type="text" class="w-100 input-box" [(ngModel)]="postCode">
+              </div>
+            </ng-container>
           </div>
 
         </div>
@@ -105,11 +115,11 @@
             <!-- <ng-container> -->
             <div class="data-input" *ngIf="!isEditable">
               <label class="float-left mb-0">Primary Number</label>
-              <label class="float-right mb-0 f-c-g">123456789</label>
+              <label class="float-right mb-0 f-c-g">{{pNumber}}</label>
             </div>
             <div class="data-input-edit" *ngIf="isEditable">
               <label style="font-size: 12px;" class="mb-0">Primary Number</label>
-            <input type="number"  class="w-100 input-box">
+              <input type="number" class="w-100 input-box" [(ngModel)]="pNumber">
             </div>
           </div>
 
@@ -124,7 +134,7 @@
             <!-- <ng-container> -->
             <div class="data-input">
               <label class="float-left mb-0">Currency</label>
-              <label class="float-right mb-0 f-c-g">123456789</label>
+              <label class="float-right mb-0 f-c-g">{{currency}}</label>
             </div>
           </div>
 
@@ -139,14 +149,14 @@
             <!-- <ng-container> -->
             <div class="data-input">
               <label class="float-left mb-0">Comm charged</label>
-              <label class="float-right mb-0 f-c-g">2.0%</label>
+              <label class="float-right mb-0 f-c-g">{{charge}}</label>
             </div>
           </div>
 
         </div>
       </div>
       <div class="float-right mt-2">
-        <button class="btn btn-custom" (click)="saveDetails()">Save</button>
+        <button class="btn btn-custom" (click)="saveDetails()" *ngIf="displaySaveButton">Save</button>
       </div>
     </div>
   </div>

@@ -17,7 +17,10 @@ export const environment = {
     login: 'api/auth/login',
     addBalance: 'api/transaction/addBalance',
     getTransaction: 'api/transaction/getTransaction/:userid',
-    profile: 'api/auth/profile/:userid'
+    profile: 'api/auth/profile/:userid',
+    getUserProfile: 'api/auth/profile/:id',
+    updateProfile: 'api/auth/user/update/:id',
+    displayMatch: 'api/bet/match/:type/:sport_id'
   }
 };
 

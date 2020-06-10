@@ -1,4 +1,5 @@
-<div class="table-responsive" *ngIf="responseData.length>0;else noData">
+
+<div class="table-responsive" *ngIf="responseData && responseData.length>0;else noData">
   <p-table class="table inPlay-table" [value]="responseData" [style]=" {width:'100%'}">
     <ng-template pTemplate="header">
       <tr *ngIf="!hideRow">
