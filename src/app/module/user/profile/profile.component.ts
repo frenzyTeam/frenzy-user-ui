@@ -32,7 +32,6 @@ export class ProfileComponent implements OnInit {
   }
   getProfileData() {
     this.userService.getProfile().subscribe((resp) => {
-      console.log(resp);
       this.profileData = resp['data']
       this.userName = this.profileData.name ? this.profileData.name : null;
       this.userEmail = this.profileData.hasOwnProperty('email') ? this.profileData.email : null;
@@ -81,7 +80,6 @@ export class ProfileComponent implements OnInit {
       "pasword": this.password
     }
     this.userService.updateProfile(userBody).subscribe((resp) => {
-      console.log(resp);
       this.isEditable = false;
       this.displaySaveButton = false;
       this.displayEditButton = true;

@@ -17,7 +17,6 @@ export class InplayTableComponent implements OnInit ,OnChanges{
    
   }
   ngOnChanges(){
-    console.log(this.tableArr,this.header);
     this.responseData=this.tableArr;
   }
 

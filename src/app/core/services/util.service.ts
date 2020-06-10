@@ -11,7 +11,6 @@ export class UtilService {
     return environment.url + ":" + environment.port + "/" + urlPath
   }
   get fetchMessageConstant() {
-    console.log(MessageConstant)
     return MessageConstant.message;
 
   }

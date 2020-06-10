@@ -44,7 +44,6 @@ export class HeaderComponent implements OnInit {
     })
   }
   openSetting() {
-    console.log("hi")
     this.openSettingModel = true;
   }
   closeSetting() {

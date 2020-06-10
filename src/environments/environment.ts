@@ -11,6 +11,9 @@ export const environment = {
     me: 'api/me'
 
   },
+  lookup: {
+    lookup: 'api/lookup',
+  },
   auth: {
     register: 'api/auth/register',
     subadminlist: 'api/auth/subAdminList',
