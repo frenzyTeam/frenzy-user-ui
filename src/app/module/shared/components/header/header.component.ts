@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.logo = 'assets/images/logo.png';
+    console.log("dfvkfjkngktnkjnlknkln")
   }
   getProfile() {
     this.authService.getProfile().subscribe((resp) => {
