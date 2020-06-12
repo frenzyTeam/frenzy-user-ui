@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: "http://157.245.249.16/",
+  url: "http://157.245.249.16",
   // url: "http://40.114.94.110",
   port: 3001,
   token: {
