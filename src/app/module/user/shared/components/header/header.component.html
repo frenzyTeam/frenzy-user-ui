@@ -16,6 +16,9 @@
       <i class="fa fa-calendar-check-o icon-margin"></i>Mar 11, 2020
     </div>
     <div class="my-account m-r-25">
+      <div class="balanceView" *ngIf="showDateTimeBlock">
+        Main <b>PTH {{details.balance}}</b>
+      </div>
       <div class="btn-group">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
           aria-expanded="false">
