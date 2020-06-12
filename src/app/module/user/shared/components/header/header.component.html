@@ -1,5 +1,7 @@
 <div class="container header-container h-100">
-  <!-- <div class="header-first-panel"> -->
+  <div style="height: 14px;font-size: 14px;">
+    <marquee behavior="scroll" direction="left">{{message}}</marquee>
+  </div>
   <div class="parent-div">
     <div class="logo-block">
       <img class="logoImage" src="{{logo}}">
@@ -25,11 +27,11 @@
               {{details? details.user_name:null}}</div>
             <div class="right-tag">GMT+5:30</div>
           </div>
-          <a class="dropdown-item menu-item"[routerLink]="['/app/profile']">My Profile</a>
+          <a class="dropdown-item menu-item" [routerLink]="['/app/profile']">My Profile</a>
           <a class="dropdown-item menu-item" [routerLink]="['/app/balance']">Balance Overview</a>
-          <a class="dropdown-item menu-item"[routerLink]="['/app/account-statement']">Account Statement</a>
-          <a class="dropdown-item menu-item"[routerLink]="['/app/my-bet']">My Bets</a>
-          <a class="dropdown-item menu-item" href="#">Bets History</a>
+          <a class="dropdown-item menu-item" [routerLink]="['/app/account-statement']">Account Statement</a>
+          <a class="dropdown-item menu-item" [routerLink]="['/app/my-bet']">My Bets</a>
+          <a class="dropdown-item menu-item">Bets History</a>
           <a class="dropdown-item menu-item" [routerLink]="['/app/profit-loss']">Profit & Loss</a>
           <div class="logout-btn" (click)="onLogout()"><button class="btn w-100" type="button">LOGOUT</button></div>
 
@@ -57,7 +59,7 @@
         <!-- <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a> -->
       </div>
       <div class="navbar-nav ml-auto">
-        
+
         <a href="#" class="nav-item nav-link">Time Zone: GMT+5:30</a>
         <a href="#" class="nav-item nav-link"><i class="fa fa-television" aria-hidden="true"></i> Live</a>
         <a (click)="openSetting()" class="nav-item nav-link"><i class="fa fa-cog"></i> Setting</a>
@@ -66,12 +68,12 @@
   </nav>
 
 </div>
-<div *ngIf="openSettingModel" class="setting-popup" >
+<div *ngIf="openSettingModel" class="setting-popup">
   <div class="card">
-    <div class="card-header" >
+    <div class="card-header">
       <i class="fa fa-cog"></i> Setting
       <i class="fa fa-close float-right" (click)="closeSetting()"></i>
-    
+
     </div>
     <div class="card-body">
       <div class="setting-header ml-1">Quick Stake</div>
@@ -85,18 +87,18 @@
         <button class="btn  button-first-row w-90">300</button>
         <button class="btn  button-first-row w-90">1000</button>
         <button class="btn  button-first-row w-90">400</button>
-       
+
       </div>
       <div class="mt-1 mr-2">
         <button class="btn  button-first-row w-100">Edit Stake <i class="fa fa-edit"></i></button>
-      
-       
+
+
       </div>
       <div class="mt-2 ml-3">
         <button class="btn btn-cancel  button-first-row w-130">Cancel </button>
         <button class="btn btn-save button-first-row w-130">Save </button>
-      
-       
+
+
       </div>
     </div>
   </div>
@@ -133,6 +135,5 @@
   <div class="col-md-10 col-12" style="padding:8px;">
     <router-outlet></router-outlet>
   </div>
- 
-</div>
 
+</div>

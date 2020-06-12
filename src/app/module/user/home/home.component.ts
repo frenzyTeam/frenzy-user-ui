@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
 import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
-import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-home',
@@ -16,15 +15,12 @@ export class HomeComponent implements OnInit {
   noTableData: boolean = true;
   message: any;
   // @ViewChild('myCarousel') myCarousel: NgbCarousel;
-  constructor(private msgService: UserService) {
+  constructor() {
 
   }
 
 
   ngOnInit() {
-    this.msgService.getMessage().subscribe((resp) => {
-      this.message = resp['data'][0]['entity_value']
-    })
     // this.images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
     this.images = ['../../../../assets/images/slider1.jpg', '../../../../assets/images/slider2.jpg', '../../../../assets/images/slider3.jpg']
     // this.myCarousel.activeId='1';

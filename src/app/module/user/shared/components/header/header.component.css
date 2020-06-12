@@ -24,7 +24,7 @@ text-align:left;
  /* ;//top right bootom left */
 }
 .logoImage{
-    padding: 7px;
+    padding: 5px;
     height:80px ;
     width: 100px;
 }
@@ -137,7 +137,7 @@ text-align:left;
       }
     
         .logoImage {
-            padding: 7px;
+            padding: 5px;
             height: 60px;
             width: 65px;
         }
