@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   details: any;
   openSettingModel: boolean = false;
   showDateTimeBlock: boolean = false;
+  todayDate : Date = new Date();
   message;
   constructor(private router: Router, private authService: AuthService, private msgService: UserService) {
   }
