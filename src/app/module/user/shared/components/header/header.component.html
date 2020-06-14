@@ -1,72 +1,142 @@
-<div class="container h-100">
-  <!-- <div class="header-first-panel"> -->
-    <div class="parent-div">
-      <div class="logo-block">
-        <img class="logoImage" src="{{logo}}">
-       </div>
-       <div class="calendar-block">
-        <i class="fa fa-calendar-check-o icon-margin"></i>Mar 11, 2020
-       </div>
-       <div class="clock-block">
-        <i class="fa fa-clock-o icon-margin"></i>3:48:12 PM GMT+5
-       </div>
+<div class="container header-container h-100">
+  <div style="height: 14px;font-size: 14px;">
+    <marquee behavior="scroll" direction="left">{{message}}</marquee>
+  </div>
+  <div class="parent-div">
+    <div class="logo-block">
+      <img class="logoImage" src="{{logo}}">
     </div>
+    <div class="calendar-block" *ngIf="showDateTimeBlock">
+      <i class="fa fa-calendar-check-o icon-margin"></i>{{todayDate | date}}
+    </div>
+    <div class="clock-block" *ngIf="showDateTimeBlock">
+      <i class="fa fa-clock-o icon-margin"></i>{{todayDate | date:'longTime'}}
+    </div>
+    <div class="date-time-block" *ngIf="!showDateTimeBlock">
+      <i class="fa fa-calendar-check-o icon-margin"></i>{{todayDate | date}}
+    </div>
+    <div class="my-account m-r-25">
+      <div class="balanceView" *ngIf="showDateTimeBlock">
+        Main <b>PTH {{details.balance}}</b>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <i class="fa fa-user m-r-5"></i> My Account
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <div class="user-account">
+            <div class="left-tag" [pTooltip]="demo123456789876" tooltipPosition="top" tooltipEvent="hover">
+              {{details? details.user_name:null}}</div>
+            <div class="right-tag">GMT+5:30</div>
+          </div>
+          <a class="dropdown-item menu-item" [routerLink]="['/app/profile']">My Profile</a>
+          <a class="dropdown-item menu-item" [routerLink]="['/app/balance']">Balance Overview</a>
+          <a class="dropdown-item menu-item" [routerLink]="['/app/account-statement']">Account Statement</a>
+          <a class="dropdown-item menu-item" [routerLink]="['/app/my-bet']">My Bets</a>
+          <a class="dropdown-item menu-item">Bets History</a>
+          <a class="dropdown-item menu-item" [routerLink]="['/app/profit-loss']">Profit & Loss</a>
+          <div class="logout-btn" (click)="onLogout()"><button class="btn w-100" type="button">LOGOUT</button></div>
 
-  
+        </div>
+      </div>
+
+
+    </div>
+  </div>
 </div>
-
 <div class="main-nav">
-<nav class="navbar navbar-expand-md navbar-light bg-nav">
-  <!-- <a href="#" class="navbar-brand">Brand</a> -->
-  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+  <nav class="navbar navbar-expand-md navbar-light bg-nav">
+    <!-- <a href="#" class="navbar-brand">Brand</a> -->
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
-  </button>
+    </button>
 
-  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="collapse navbar-collapse" id="navbarCollapse">
       <div class="navbar-nav">
-          <a href="#" class="nav-item nav-link active">Home</a>
-          <a href="#" class="nav-item nav-link">In-Play</a>
-          <a href="#" class="nav-item nav-link">Cricket</a>
-          <a href="#" class="nav-item nav-link">Football</a>
-          <a href="#" class="nav-item nav-link">Tennis</a>
-          <!-- <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a> -->
+        <a [routerLink]="['/app/home']" class="nav-item nav-link active">Home</a>
+        <a [routerLink]="['/app/in-play']" class="nav-item nav-link">In-Play</a>
+        <a [routerLink]="['/app/cricket']" class="nav-item nav-link">Cricket</a>
+        <a [routerLink]="['/app/football']" class="nav-item nav-link">Football</a>
+        <a [routerLink]="['/app/tennis']" class="nav-item nav-link">Tennis</a>
+        <!-- <a href="#" class="nav-item nav-link disabled" tabindex="-1">Reports</a> -->
       </div>
       <div class="navbar-nav ml-auto">
-          <a href="#" class="nav-item nav-link">Time Zone: GMT+5:30</a>
-          <a href="#" class="nav-item nav-link"><i class="fa fa-television" aria-hidden="true"></i> Live</a>
-          <a href="#" class="nav-item nav-link"><i class="fa fa-cog"></i> Setting</a>
+
+        <a href="#" class="nav-item nav-link">Time Zone: GMT+5:30</a>
+        <a href="#" class="nav-item nav-link"><i class="fa fa-television" aria-hidden="true"></i> Live</a>
+        <a (click)="openSetting()" class="nav-item nav-link"><i class="fa fa-cog"></i> Setting</a>
       </div>
-  </div>
-</nav>
+    </div>
+  </nav>
 
 </div>
+<div *ngIf="openSettingModel" class="setting-popup">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-cog"></i> Setting
+      <i class="fa fa-close float-right" (click)="closeSetting()"></i>
 
-<div class="col-md-12 col-sm-12 no-padding">
-  <div class="sidebar col-md-2 col-sm-4" style="height: 100%;padding: 10px;">
+    </div>
+    <div class="card-body">
+      <div class="setting-header ml-1">Quick Stake</div>
+      <div class="mt-1">
+        <button class="btn  button-first-row w-70">100</button>
+        <button class="btn  button-first-row w-70">500</button>
+        <button class="btn  button-first-row w-70">200</button>
+        <button class="btn  button-first-row w-70">300</button>
+      </div>
+      <div class="mt-1">
+        <button class="btn  button-first-row w-90">300</button>
+        <button class="btn  button-first-row w-90">1000</button>
+        <button class="btn  button-first-row w-90">400</button>
+
+      </div>
+      <div class="mt-1 mr-2">
+        <button class="btn  button-first-row w-100">Edit Stake <i class="fa fa-edit"></i></button>
+
+
+      </div>
+      <div class="mt-2 ml-3">
+        <button class="btn btn-cancel  button-first-row w-130">Cancel </button>
+        <button class="btn btn-save button-first-row w-130">Save </button>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row no-padding" style="background: #EEEEEE;min-height: 100vh;margin-left: 0;margin-right: 0;">
+  <div class="sidebar col-md-2  col-12 col-sm-4" style="height: 100%;padding:8px;background: white;">
     <div class="sports-block col-md-12 col-sm-12">
       <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
       <span class="float-right"> Sports</span>
     </div>
     <div class="sports-label col-md-12 col-sm-12" style="border-bottom: 1px solid lightgray;padding: 5px;">
-     
-      <span style="color: mediumblue;">Football</span>
-      <span class="float-right"><i class="fa fa fa-caret-right" style="color: black;background: #FFC626;height:16px;width:16px;text-align: center;"></i></span>
-    
+
+      <span><a [routerLink]="['/app/football']" style="color: mediumblue;">Football</a></span>
+      <span class="float-right"><i class="fa fa fa-caret-right"
+          style="color: black;background: #FFC626;height:16px;width:16px;text-align: center;"></i></span>
+
     </div>
     <div class="sports-label col-md-12 col-sm-12" style="border-bottom: 1px solid lightgray;padding: 5px;">
-     
-      <span style="color: mediumblue;">Tennis</span>
-      <span class="float-right"><i class="fa fa fa-caret-right" style="color: black;background: #FFC626;height:16px;width:16px;text-align: center;"></i></span>
-    
+
+      <span><a [routerLink]="['/app/tennis']" style="color: mediumblue;">Tennis</a></span>
+      <span class="float-right"><i class="fa fa fa-caret-right"
+          style="color: black;background: #FFC626;height:16px;width:16px;text-align: center;"></i></span>
+
     </div>
     <div class="sports-label col-md-12 col-sm-12" style="border-bottom: 1px solid lightgray;padding: 5px;">
-     
-      <span style="color: mediumblue;">Cricket</span>
-      <span class="float-right"><i class="fa fa fa-caret-right" style="color: black;background: #FFC626;height:16px;width:16px;text-align: center;"></i></span>
-    
+
+      <span><a [routerLink]="['/app/cricket']" style="color: mediumblue;">Cricket</a></span>
+      <span class="float-right"><i class="fa fa fa-caret-right"
+          style="color: black;background: #FFC626;height:16px;width:16px;text-align: center;"></i></span>
+
     </div>
   </div>
+  <div class="col-md-10 col-12" style="padding:8px;">
+    <router-outlet></router-outlet>
   </div>
 
-
-  
+</div>

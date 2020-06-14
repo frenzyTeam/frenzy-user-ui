@@ -1,3 +1,38 @@
-<p>
-  footer works!
-</p>
+<div class="row" style="margin-left:0;margin-right:0">
+  <div class="col-md-8 " style="padding-left:4px;padding-right: 4px ;">
+    <app-image-slider></app-image-slider>
+    <div class="cricket-tab" style="margin-top:5px;">
+
+      <div class="highlight">Highlights</div>
+      <p-tabView class="cricket-tab" [activeIndex]="index" (onChange)="handleChange($event)">
+
+
+        <p-tabPanel header="In-Play">
+          <div class="cricket-box" >
+            <app-inplay-table [tableArr]="cricketArr" [header]="'Cricket'" [hideRow]="true"></app-inplay-table>
+
+          </div>
+        
+        </p-tabPanel>
+        <p-tabPanel header="Today">
+          <div class="cricket-box" >
+            <app-inplay-table [tableArr]="cricketArr" [header]="'Cricket'" [hideRow]="true"></app-inplay-table>
+
+          </div>
+        
+        </p-tabPanel>
+        <p-tabPanel header="Tommorow">
+          <div class="cricket-box">
+            <app-inplay-table [tableArr]="cricketArr" [header]="'Cricket'" [hideRow]="true"></app-inplay-table>
+
+          </div>
+         
+        </p-tabPanel>
+      </p-tabView>
+
+    </div>
+  </div>
+  <div class="col-md-4" style="border: 1px solid;padding-left:4px;padding-right: 4px">
+
+  </div>
+</div>

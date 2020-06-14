@@ -1,3 +1,39 @@
-<p>
-  tennis works!
-</p>
+<div class="row" style="margin-left:0;margin-right:0">
+  <div class="col-md-8 " style="padding-left:4px;padding-right: 4px ;">
+    <app-image-slider></app-image-slider>
+    <div class="tennis-tab" style="margin-top:5px;" (click)="getSelectedHeader()">
+
+      <div class="highlight">Highlights</div>
+      <p-tabView class="tennis-tab" [activeIndex]="index" (onChange)="handleChange($event)">
+
+
+        <p-tabPanel header="In-Play">
+          <div class="tennis-box" >
+            <app-inplay-table [tableArr]="tennisInplayArr"  [hideRow]="true"></app-inplay-table>
+
+          </div>
+        
+        </p-tabPanel>
+        <p-tabPanel header="Today">
+          <div class="tennis-box" >
+            <app-inplay-table [tableArr]="tennisTodayArr"  [hideRow]="true"></app-inplay-table>
+
+          </div>
+        
+        </p-tabPanel>
+        <p-tabPanel header="Tomorrow">
+          <div class="tennis-box">
+            <app-inplay-table [tableArr]="tennisTomorrowArr"  [hideRow]="true"></app-inplay-table>
+
+          </div>
+         
+        </p-tabPanel>
+      </p-tabView>
+
+    </div>
+  </div>
+  <div class="col-md-4 sidebar" style="padding-left:4px;padding-right: 4px">
+    <app-side-bar></app-side-bar>
+  </div>
+</div>
+<app-footer></app-footer>

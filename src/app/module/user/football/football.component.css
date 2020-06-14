@@ -1,0 +1,41 @@
+.football-tab .ui-tabview{
+    padding: 0;
+    }
+    
+    .football-tab .ui-tabview.ui-tabview-top>.ui-tabview-nav{
+    background: #FFC21C;
+    }
+    /* .football-tab .ui-tabview .ui-tabview-nav li{
+        margin-right: ;
+    } */
+    .football-tab .ui-tabview .ui-tabview-nav li a{
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top:2px;
+        padding-bottom: 2px;
+    }
+    .football-tab .ui-tabview.ui-tabview-top>.ui-tabview-nav li{
+    background: #26384C;
+    color: white;
+    border: none;
+    }
+    .football-tab .ui-tabview .ui-tabview-title{
+        font-size: 14px;
+    }
+    .highlight{
+        background: #FEC11B;
+        color: #120D00;
+        padding-left: 5px;
+        font-weight: bold;
+        font-size: 14px;
+        border: none;
+    }
+    .football-tab .ui-tabview .ui-tabview-nav > li.ui-state-active {
+        background: white;
+        color: black;
+        border: 1px solid white;
+        outline: none;
+    }
+    .football-tab .ui-tabview .ui-tabview-panel{
+       padding: 5px; 
+    }

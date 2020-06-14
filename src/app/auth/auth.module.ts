@@ -5,11 +5,13 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ThemeModule } from '../shared/theme/theme.module';
 import { AuthService } from './auth.service';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   imports: [
     CommonModule,
     AuthRoutingModule,
-    ThemeModule
+    ThemeModule,
+    FormsModule
   ],
   declarations: [LoginComponent, RegistrationComponent],
   providers: [

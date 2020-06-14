@@ -12,10 +12,17 @@ export class AuthService {
 
   constructor(private http: HttpClient, private util: UtilService) { }
   registerUser(body) {
-    console.log(body)
     return this.http.post(this.util.generateUrl(environment.auth.register), body)
   }
   subAdminList() {
     return this.http.get(this.util.generateUrl(environment.auth.subadminlist))
+  }
+  onLogin(body) {
+    return this.http.post(this.util.generateUrl(environment.auth.login), body)
+  }
+  getProfile() {
+    let urlLink = this.util.generateUrl(environment.auth.profile)
+    urlLink = urlLink.replace(':userid', localStorage.getItem('userid'))
+    return this.http.get(urlLink)
   }
 }

@@ -1,0 +1,49 @@
+.card{
+    line-height: 1;
+}
+.card-header{
+    padding: 5px 5px 5px 12px;
+    font-size: 16px;
+    font-weight: 500;
+    background: #DADADA;
+    color:#323637;
+
+}
+.card-body{
+    padding:0;
+    font-size: 14px;
+    border-bottom: 2px solid #2C363F;
+   
+}
+.data-input{
+    height: 30px;
+    padding: 7px 7px 7px 12px;
+    border-bottom: 1px solid #CECECE;
+    color: black;
+    font-weight: 500;
+}
+.data-input-edit{
+    height: 50px;
+    padding:2px 12px 2px 12px;
+    border-bottom: 1px solid #CECECE;
+    color: black;
+    font-weight: 500;
+}
+.btn-custom{
+background: #32526B;
+color:white;
+
+}
+.btn{
+    padding:2px 12px 2px 12px;
+    line-height: normal;
+    font-size: 15px;
+}
+.input-box{
+    border: 1px solid #D9D9D9;
+    height: 28px;
+}
+.f-c-g{
+    color: #949295;
+    font-weight: 500;
+}

@@ -6,38 +6,38 @@
           <h2 class="title">Create Account</h2>
         </div>
         <div class="card-body">
-          <form>
+          <form autocomplete="off">
             <div class="form-label-group">
-              <input type="text" id="inputEmail" class="form-control" placeholder="Name" autofocus>
-              <!-- <label for="Username">Username</label> -->
+              <input type="text" id="inputEmail" class="form-control" placeholder="Name" autofocus
+                [(ngModel)]="register.name" name="name">
             </div>
-            <!-- <div class="form-group">
+            <!-- <div class="form-label-group">
 
               <p-calendar class="calendar-class-registration" appendTo="body" placeholder="DD-MM-YYYY"
                 dateFormat="dd-mm-yy" dataType="string" [showIcon]="true" (onSelect)="validateReturnDate()"
-                onPaste="return false;">
+                onPaste="return false;" [(ngModel)]="register.user_name">
               </p-calendar>
-              </div> -->
-              <!-- <input type="text" id="inputEmail" class="form-control" placeholder="Username"   autofocus> -->
-              <!-- <label for="Username">Username</label> 
             </div> -->
             <div class="form-label-group">
-              <input type="text" id="userId" class="form-control" placeholder="User ID">
-              <!-- <label for="Username">Username</label> -->
+              <input type="text" id="userId" class="form-control" placeholder="User ID" [(ngModel)]="register.user_name"
+                name="user_name">
             </div>
             <div class="form-label-group">
-              <input type="password" id="userPassword" class="form-control" placeholder="password">
-              <!-- <label for="Username">Username</label> -->
+              <input type="password" id="userPassword" class="form-control" placeholder="password"
+                [(ngModel)]="register.password" name="password">
             </div>
-            <div class="form-label-group">
-              <p-dropdown [style]="{'width':'100%'}" appendTo="body" placeholder="Select">
+            <div class="form-label-group ">
+              <p-dropdown [style]="{'width':'100%'}" appendTo="body" [options]="subAdmins"
+                [(ngModel)]="register.sub_admin" placeholder="Select" name="sub_admin">
               </p-dropdown>
             </div>
 
           </form>
         </div>
         <div class="card-footer">
-          <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+          <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" (click)="onSubmit()">Sign
+            Up</button>
+          <p class="already-register my-2">Have already an account? <a [routerLink]="['/login']">Login here</a></p>
         </div>
       </div>
     </div>

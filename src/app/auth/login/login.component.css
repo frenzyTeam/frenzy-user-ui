@@ -63,14 +63,18 @@
   .form-label-group>input
    {
     padding: 5px 10px;
-    color:#FFC422;
+    color:#2e2f29;
     width: 100%;
   }
   
   
-  .btn{
+  .loginPage .btn{
       background:#FFC422;
       border:none;
+  }
+  .loginPage .btn:hover{
+    background: #2e2f29;
+    border:none;
   }
   .not-register{
       text-align: center;
