@@ -23,11 +23,11 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    this.notify.setLoading(true);
+    // this.notify.setLoading(true);
     this.authService.onLogin({ data: this.login }).subscribe((response) => {
       localStorage.setItem('token', response['data']['token'])
       localStorage.setItem('userid', response['data']['userid'])
-      this.notify.setLoading(false);
+      // this.notify.setLoading(false);
       this.router.navigate(['/app/home']);
       this.showSuccess()
     });

@@ -26,7 +26,6 @@ export class NotifyService {
     }
   }
   setLoading(isLoading: boolean) {
-    console.log(isLoading)
     this.isLoadingSubject.next(isLoading);
   }
 

@@ -14,6 +14,8 @@ import { LoadingSpinnerComponent } from './module/user/shared/components/loading
 import { NotifyService } from './module/user/shared/services/notify.service';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoaderInterceptor } from './shared/interceptors/loader.interceptor';
+import { ToasterInterceptor } from './shared/interceptors/toaster.interceptor';
+import { MessageService } from 'primeng/api';
 
 
 @NgModule({
@@ -34,7 +36,7 @@ import { LoaderInterceptor } from './shared/interceptors/loader.interceptor';
     // NgbModule
     ToastModule
   ],
-  providers: [UtilService, NotifyService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }],
+  providers: [MessageService, UtilService, NotifyService, { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }],
   bootstrap: [AppComponent],
   exports: [LoadingSpinnerComponent]
 })

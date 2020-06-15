@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
 
   constructor(private messageService: MessageService) { }
   ngOnInit() {  
+    this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Success' });
   }
 
 
