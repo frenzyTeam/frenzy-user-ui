@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
-import { ReplaySubject } from '../../../../../../node_modules/rxjs';
+import { ReplaySubject, Observable } from '../../../../../../node_modules/rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class NotifyService {
-
+  private isLoadingSubject = new Subject<boolean>();
   private notifyToggleMenuBar = new ReplaySubject<any>();
   notifyMenuToggleObservable$ = this.notifyToggleMenuBar.asObservable();
 
@@ -24,6 +24,14 @@ export class NotifyService {
     if (data) {
       this.notifyChangeScreen.next(data);
     }
+  }
+  setLoading(isLoading: boolean) {
+    console.log(isLoading)
+    this.isLoadingSubject.next(isLoading);
+  }
+
+  getLoading(): Observable<boolean> {
+    return this.isLoadingSubject.asObservable();
   }
 
 }

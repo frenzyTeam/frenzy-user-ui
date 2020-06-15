@@ -11,7 +11,7 @@ import { UserService } from '../../../../user/user.service';
 })
 export class HeaderComponent implements OnInit {
   logo: string;
-  details: any;
+  details: any=null;
   openSettingModel: boolean = false;
   showDateTimeBlock: boolean = false;
   todayDate : Date = new Date();

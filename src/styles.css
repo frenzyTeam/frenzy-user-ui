@@ -40,3 +40,56 @@ width: 15%;
     background:  #EEEEEE;
     border: 1px solid #F5F5F7;
  }
+
+
+
+  .ui-toast-message.ui-toast-message-info {
+    background-color: #2196f3;
+    border: 0;
+    color: #FFFFFF;
+    font-weight: normal;
+  }
+
+  .ui-toast-message.ui-toast-message-success {
+    background-color: #4CAF50;
+    border: 0;
+    color: #FFFFFF;
+    font-weight: normal;
+  }
+
+  .ui-toast-message.ui-toast-message-error {
+    background-color: #e73e4d;
+    border: 0;
+    color: #FFFFFF;
+    font-weight: normal;
+  }
+
+  .ui-toast-close-icon {
+    color: #FFFFFF;
+    font-weight: normal;
+  }
+
+  a {
+    color: #FFFFFF;
+  }
+  .is-loading {
+    overflow: hidden;
+  }
+  
+  .loading {
+    position: fixed;
+    z-index: 999999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0, 0.5);
+  }
+    .loading__wrapper {
+      position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+  

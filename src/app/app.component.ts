@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MessageService } from 'primeng/api'
+import { Component, OnInit, ViewEncapsulation, ViewChild } from '@angular/core';
+import { MessageService, DomHandler } from 'primeng/api'
+
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,10 @@ import { MessageService } from 'primeng/api'
 })
 export class AppComponent implements OnInit {
   title = 'omitHubUser';
+
   constructor(private messageService: MessageService) { }
-  ngOnInit() {
-    this.showSuccess()
+  ngOnInit() {  
   }
-  showSuccess() {
-    this.messageService.add({ severity: 'success', summary: 'Success Message', detail: 'Order submitted', sticky: true, life: 20000 });
-  }
+
+
 }
