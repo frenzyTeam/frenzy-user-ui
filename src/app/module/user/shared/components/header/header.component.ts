@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { UserService } from '../../../../user/user.service';
 import * as _ from 'lodash';
+import { NotifyService } from '../../services/notify.service';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,7 @@ export class HeaderComponent implements OnInit {
   showDateTimeBlock: boolean = false;
   todayDate: Date = new Date();
   message;
-  constructor(private router: Router, private authService: AuthService, private userService: UserService) {
+  constructor(private notifyService: NotifyService, private router: Router, private authService: AuthService, private userService: UserService) {
   }
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -80,6 +81,7 @@ export class HeaderComponent implements OnInit {
       this.getProfile();
       this.editableStake = false
       this.closeSetting()
+      this.notifyService.saveProfile(true)
     });
 
   }

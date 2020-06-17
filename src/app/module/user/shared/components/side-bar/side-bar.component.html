@@ -1,7 +1,7 @@
 <div class="no-padding">
     <div class="sidebar-header pl-3">Bet Slip</div>
     <div class="text-center  sidebar-body">
-        <p-accordion>
+        <p-accordion [multiple]="true">
             <ng-container *ngFor="let bet of bets;let index=index">
                 <p-accordionTab header="Bet {{index+1}}">
                     <p-card>

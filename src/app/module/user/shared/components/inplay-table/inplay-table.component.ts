@@ -34,6 +34,14 @@ export class InplayTableComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.notifyService.isBetSave(true)
     this.getProfile()
+    this.notifyService.getProfile().subscribe(resp => {
+      if (resp) {
+        this.getProfile()
+        this.notifyService.saveProfile(false)
+      }
+
+    })
+
   }
   ngOnChanges() {
     this.responseData = this.tableArr;
@@ -47,6 +55,7 @@ export class InplayTableComponent implements OnInit, OnChanges {
     })
   }
   openSetting() {
+    // this.getProfile()
     this.openSettingModel = true;
   }
   closeSetting() {
