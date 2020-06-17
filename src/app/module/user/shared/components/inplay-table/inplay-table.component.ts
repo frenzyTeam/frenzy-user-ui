@@ -76,13 +76,6 @@ export class InplayTableComponent implements OnInit, OnChanges {
     this.betService.saveBet(this.currentStake).subscribe((resp) => {
       this.notifyService.isBetSave(true)
     })
-    // this.authService.updateProfile({
-    //   "stake": _.union(this.stake4, this.stake3)
-    // }).subscribe((resp) => {
-    //   this.getProfile();
-    //   this.editableStake = false
-    //   this.closeSetting()
-    // });
   }
   openStake(id, req, type, team_id, sport_id, team_name) {
     this.currentStake = {

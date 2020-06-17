@@ -6,13 +6,13 @@ import { TabView } from 'primeng/primeng';
   selector: 'app-football',
   templateUrl: './football.component.html',
   styleUrls: ['./football.component.css'],
-  encapsulation:ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None
 })
 export class FootballComponent implements OnInit {
-  footballTodayArr:any=[];
-  footballInplayArr:any=[];
-  footballTomorrowArr:any=[];
-  index=0;
+  footballTodayArr: any = [];
+  footballInplayArr: any = [];
+  footballTomorrowArr: any = [];
+  index = 0;
   message: any = null;
   key: any = null;
   @ViewChild(TabView) tabView: TabView;
@@ -57,11 +57,17 @@ export class FootballComponent implements OnInit {
     let array = [];
     data.map(x => {
       let json = {};
+      json['id'] = x.id;
+      json['match_id'] = x.match_id;
+      json['sports_id'] = x.sport_id;
+      json['our_event_id'] = x.our_event_id
       json['matchName'] = x.match_name;
       json['date'] = "12-12-1234 3:45 PM"
       json['bat1'] = {
         x: "1.21",
-        y: "1.43"
+        y: "1.43",
+        team_id: x.home.id,
+        team_name: x.home.name
       }
       json['batx'] = {
         x: "1.21",
@@ -69,7 +75,9 @@ export class FootballComponent implements OnInit {
       }
       json['bat2'] = {
         x: "1.21",
-        y: "1.43"
+        y: "1.43",
+        team_id: x.away.id,
+        team_name: x.away.name
       }
       array.push(json);
     });
