@@ -6,6 +6,7 @@ import { ReplaySubject, Observable } from '../../../../../../node_modules/rxjs';
 })
 export class NotifyService {
   private isLoadingSubject = new Subject<boolean>();
+  private isBetSubject = new Subject<boolean>();
   private notifyToggleMenuBar = new ReplaySubject<any>();
   notifyMenuToggleObservable$ = this.notifyToggleMenuBar.asObservable();
 
@@ -25,6 +26,15 @@ export class NotifyService {
       this.notifyChangeScreen.next(data);
     }
   }
+
+  isBetSave(isLoading: boolean) {
+    this.isBetSubject.next(isLoading);
+  }
+
+  isBetSaved(): Observable<boolean> {
+    return this.isBetSubject.asObservable();
+  }
+
   setLoading(isLoading: boolean) {
     this.isLoadingSubject.next(isLoading);
   }

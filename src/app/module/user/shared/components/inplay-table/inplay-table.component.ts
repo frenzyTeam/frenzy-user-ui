@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation, Input, OnChanges } from '@angular
 import { AuthService } from 'src/app/auth/auth.service';
 import * as _ from 'lodash';
 import { BetService } from '../../services/bet.service';
+import { NotifyService } from '../../services/notify.service';
 
 
 @Component({
@@ -28,9 +29,10 @@ export class InplayTableComponent implements OnInit, OnChanges {
   responseData = [];
   @Input() header: string = null;
   @Input() hideRow: boolean = false;
-  constructor(private authService: AuthService, private betService: BetService) { }
+  constructor(private authService: AuthService, private betService: BetService, private notifyService: NotifyService) { }
 
   ngOnInit() {
+    this.notifyService.isBetSave(true)
     this.getProfile()
   }
   ngOnChanges() {
@@ -63,6 +65,7 @@ export class InplayTableComponent implements OnInit, OnChanges {
   onSave() {
     this.saveBet(this.selectedStake.value)
     this.betService.saveBet(this.currentStake).subscribe((resp) => {
+      this.notifyService.isBetSave(true)
     })
     // this.authService.updateProfile({
     //   "stake": _.union(this.stake4, this.stake3)
@@ -88,12 +91,11 @@ export class InplayTableComponent implements OnInit, OnChanges {
     const profit = stake + stake * this.currentStake.odds_req
     this.currentStake['stake'] = stake
     this.currentStake['profit'] = profit
-    console.log(this.currentStake)
+    this.closeSetting()
   }
   setStake(index, value) {
     this.selectedStake.index = index
     this.selectedStake.value = value
-    console.log(value)
     this.hoverprofit = value + value * this.currentStake.odds_req
   }
 
