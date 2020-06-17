@@ -14,6 +14,10 @@ export const environment = {
   lookup: {
     lookup: 'api/lookup',
   },
+  bet: {
+    save: 'api/bet/save',
+    get: 'api/bet/current/bets'
+  },
   auth: {
     register: 'api/auth/register',
     subadminlist: 'api/auth/subAdminList',

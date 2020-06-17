@@ -1,4 +1,37 @@
 <div class="no-padding">
-<div class="sidebar-header pl-3">Bet Slip</div>
-<div class="text-center  sidebar-body">Click on the odds to add selections to the bet slip</div>
+    <div class="sidebar-header pl-3">Bet Slip</div>
+    <div class="text-center  sidebar-body">
+        <p-accordion>
+            <ng-container *ngFor="let bet of bets;let index=index">
+                <p-accordionTab header="Bet {{index+1}}">
+                    <p-card>
+                        <div class="container">
+                            <div class="row">
+                                <h6>{{bet.match_name | uppercase}}</h6>
+                            </div>
+                            <div class="row">
+                                <p>{{bet.team_name | uppercase}}</p>
+                            </div>
+                            <div class="row">
+                                <p>Type: {{bet.bet_on | uppercase}}</p>
+                            </div>
+                            <div class="row">
+                                <p>Point: {{bet.odds_req}}</p>
+                            </div>
+                            <div class="row">
+                                <p>Stake: {{bet.stake}}</p>
+                            </div>
+                            <div class="row">
+                                <p>Profit To be: {{bet.profit}}</p>
+                            </div>
+                            <div class="row">
+                                <p>Result declared: {{bet.result | uppercase}}</p>
+                            </div>
+                        </div>
+                    </p-card>
+                </p-accordionTab>
+            </ng-container>
+        </p-accordion>
+
+    </div>
 </div>

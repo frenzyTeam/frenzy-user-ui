@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation, HostListener } from '@angular/cor
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 import { UserService } from '../../../../user/user.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-header',
@@ -10,13 +11,17 @@ import { UserService } from '../../../../user/user.service';
   encapsulation: ViewEncapsulation.None
 })
 export class HeaderComponent implements OnInit {
+  stake: any = []
+  stake4: any = []
+  stake3: any = []
+  editableStake = false
   logo: string;
-  details: any=null;
+  details: any = null;
   openSettingModel: boolean = false;
   showDateTimeBlock: boolean = false;
-  todayDate : Date = new Date();
+  todayDate: Date = new Date();
   message;
-  constructor(private router: Router, private authService: AuthService, private msgService: UserService) {
+  constructor(private router: Router, private authService: AuthService, private userService: UserService) {
   }
   @HostListener('window:resize', ['$event'])
   onResize(event) {
@@ -25,7 +30,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.msgService.getMessage().subscribe((resp) => {
+    this.userService.getMessage().subscribe((resp) => {
       this.message = resp['data'][0]['entity_value']
     })
 
@@ -48,6 +53,8 @@ export class HeaderComponent implements OnInit {
   getProfile() {
     this.authService.getProfile().subscribe((resp) => {
       this.details = resp['data'];
+      this.stake = resp['data']['stake']
+      this.resetStake()
     })
   }
   openSetting() {
@@ -56,5 +63,24 @@ export class HeaderComponent implements OnInit {
   closeSetting() {
     this.openSettingModel = false;
   }
+  onEditableStake() {
+    this.editableStake = !this.editableStake
+  }
+  resetStake() {
+    const arr = _.chunk(this.stake, 4)
+    this.stake4 = arr[0]
+    this.stake3 = arr[1]
+    this.editableStake = false
+    this.closeSetting()
+  }
+  onSave() {
+    this.authService.updateProfile({
+      "stake": _.union(this.stake4, this.stake3)
+    }).subscribe((resp) => {
+      this.getProfile();
+      this.editableStake = false
+      this.closeSetting()
+    });
 
+  }
 }

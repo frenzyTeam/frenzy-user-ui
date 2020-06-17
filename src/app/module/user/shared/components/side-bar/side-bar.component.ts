@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BetService } from '../../services/bet.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./side-bar.component.css']
 })
 export class SideBarComponent implements OnInit {
-
-  constructor() { }
+  bets=[]
+  constructor(private betService: BetService) { }
 
   ngOnInit() {
+    this.betService.getBet().subscribe((resp) => {
+      this.bets=resp['data']
+    })
   }
 
 }

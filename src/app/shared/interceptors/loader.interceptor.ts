@@ -10,14 +10,16 @@ export class LoaderInterceptor implements HttpInterceptor {
     constructor(public notifyService: NotifyService, private msgService: MessageService) { }
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         this.notifyService.setLoading(true);
+        req = req.clone({
+            setHeaders: {
+                'x-access-token': `${localStorage.getItem('token')}`
+            }
+        });
         return next.handle(req).pipe(
             tap(evt => {
                 if (evt instanceof HttpResponse) {
-                    console.log(evt)
-                    console.log(evt.body || evt.body.error_status)
                     if (evt.body || evt.body.error_status)
-                        console.log("fdjdfjbn")
-                    this.msgService.add({ severity: 'success', summary: 'Success', detail: 'Success' });
+                        this.msgService.add({ severity: 'success', summary: 'Success', detail: 'Success' });
 
                 }
             }),

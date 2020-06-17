@@ -15,10 +15,7 @@ export class ToasterInterceptor implements HttpInterceptor {
         return next.handle(req).pipe(
             tap(evt => {
                 if (evt instanceof HttpResponse) {
-                    console.log(evt)
-                    console.log(evt.body || evt.body.error_status)
                     if (evt.body || evt.body.error_status)
-                        console.log("fdjdfjbn")
                         this.msgService.add({ severity: 'success', summary: 'Success', detail: 'Success' });
 
                 }

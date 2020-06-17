@@ -25,4 +25,10 @@ export class AuthService {
     urlLink = urlLink.replace(':userid', localStorage.getItem('userid'))
     return this.http.get(urlLink)
   }
+  updateProfile(body) {
+    let urlLink = this.util.generateUrl(environment.auth.updateProfile)
+    urlLink = urlLink.replace(':id', localStorage.getItem('userid'))
+    return this.http.post(urlLink, body)
+  }
+
 }

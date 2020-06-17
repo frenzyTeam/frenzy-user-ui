@@ -80,26 +80,34 @@
     </div>
     <div class="card-body">
       <div class="setting-header ml-1">Quick Stake</div>
-      <div class="mt-1">
-        <button class="btn  button-first-row w-70">100</button>
-        <button class="btn  button-first-row w-70">500</button>
-        <button class="btn  button-first-row w-70">200</button>
-        <button class="btn  button-first-row w-70">300</button>
+      <div class="mt-1" *ngIf="!editableStake">
+        <ng-container *ngFor="let stake of stake4">
+          <button class="btn  button-first-row w-70">{{stake}}</button>
+        </ng-container>
       </div>
-      <div class="mt-1">
-        <button class="btn  button-first-row w-90">300</button>
-        <button class="btn  button-first-row w-90">1000</button>
-        <button class="btn  button-first-row w-90">400</button>
-
+      <div class="mt-1" *ngIf="editableStake">
+        <ng-container *ngFor="let stake of stake4; let index=index">
+          <input type="number" class="btn  button-first-row w-70" [(ngModel)]="stake4[index]">
+          <!-- <button class="btn  button-first-row w-70">{{stake}}</button> -->
+        </ng-container>
+      </div>
+      <div class="mt-1" *ngIf="!editableStake">
+        <ng-container *ngFor="let stake of stake3">
+          <button class="btn  button-first-row w-90">{{stake}}</button>
+        </ng-container>
+      </div>
+      <div class="mt-1" *ngIf="editableStake">
+        <ng-container *ngFor="let stake of stake3; let index=index">
+          <input type="number" class="btn  button-first-row w-70" [(ngModel)]="stake3[index]">
+        </ng-container>
       </div>
       <div class="mt-1 mr-2">
-        <button class="btn  button-first-row w-100">Edit Stake <i class="fa fa-edit"></i></button>
-
-
+        <button class="btn  button-first-row w-100" (click)="onEditableStake()">Edit Stake <i
+            class="fa fa-edit"></i></button>
       </div>
       <div class="mt-2 ml-3">
-        <button class="btn btn-cancel  button-first-row w-130">Cancel </button>
-        <button class="btn btn-save button-first-row w-130">Save </button>
+        <button class="btn btn-cancel  button-first-row w-130" (click)="resetStake()">Cancel </button>
+        <button class="btn btn-save button-first-row w-130" (click)="onSave()">Save </button>
 
 
       </div>

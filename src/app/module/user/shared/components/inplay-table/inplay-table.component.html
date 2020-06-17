@@ -27,10 +27,12 @@
         </td>
         <td class="w-15">
           <div style="display: flex;">
-            <span class="bet-value1 f-w-bold text-center">&nbsp;</span>
-            <span class="bet-value2 f-w-bold text-center">&nbsp;</span>
-            <!-- <span class="bet-value1 f-w-bold text-center">{{data.bat1.x}}</span>
-              <span class="bet-value2 f-w-bold text-center">{{data.bat1.y}}</span> -->
+            <!-- <span class="bet-value1 f-w-bold text-center">1x</span>
+            <span class="bet-value2 f-w-bold text-center">&nbsp;</span> -->
+            <span class="bet-value1 f-w-bold text-center"
+              (click)="openStake(data.id, data.bat1.x, 'lay', data.bat1.team_id, data.sports_id, data.bat1.team_name)">{{data.bat1.x}}</span>
+            <span class="bet-value2 f-w-bold text-center"
+              (click)="openStake(data.id, data.bat1.y, 'back', data.bat1.team_id, data.sports_id, data.bat1.team_name)">{{data.bat1.y}}</span>
           </div>
         </td>
         <td class="w-15">
@@ -41,8 +43,11 @@
         </td>
         <td class="w-15">
           <div style="display: flex;">
-            <span class="bet-value1 f-w-bold text-center">&nbsp;</span>
-            <span class="bet-value2 f-w-bold text-center">&nbsp;</span></div>
+            <span class="bet-value1 f-w-bold text-center"
+              (click)="openStake(data.id, data.bat2.x, 'lay', data.bat2.team_id, data.sports_id, data.bat2.team_name)">{{data.bat2.x}}</span>
+            <span class="bet-value2 f-w-bold text-center"
+              (click)="openStake(data.id, data.bat2.y, 'back', data.bat2.team_id, data.sports_id, data.bat2.team_name)">{{data.bat2.y}}</span>
+          </div>
         </td>
       </tr>
 
@@ -75,3 +80,51 @@
     <!-- No record found -->
   </p-table>
 </ng-template>
+<div *ngIf="openSettingModel" class="setting-popup">
+  <div class="card">
+    <div class="card-header">
+      <i class="fa fa-cog"></i> Setting
+      <i class="fa fa-close float-right" (click)="closeSetting()"></i>
+
+    </div>
+    <div class="card-body">
+      <div class="setting-header ml-1">Quick Stake</div>
+      <div class="mt-1" *ngIf="!editableStake">
+        <ng-container *ngFor="let stake of stake4;let index = index">
+          <button class="btn  button-first-row w-70" [ngClass]="stake == selectedStake.value ? 'success': ''"
+            (click)="setStake(index,stake4[index])">{{stake}}</button>
+        </ng-container>
+      </div>
+      <div class="mt-1" *ngIf="editableStake">
+        <ng-container *ngFor="let stake of stake4; let index=index">
+          <input type="number" class="btn  button-first-row w-70" [(ngModel)]="stake4[index]">
+          <!-- <button class="btn  button-first-row w-70">{{stake}}</button> -->
+        </ng-container>
+      </div>
+      <div class="mt-1" *ngIf="!editableStake">
+        <ng-container *ngFor="let stake of stake3;let index=index">
+          <button class="btn  button-first-row w-90" [ngClass]="stake == selectedStake.value ? 'success': ''"
+            (click)="setStake(index,stake3[index])">{{stake}}</button>
+        </ng-container>
+      </div>
+      <div class="mt-1" *ngIf="editableStake">
+        <ng-container *ngFor="let stake of stake3; let index=index">
+          <input type="number" class="btn  button-first-row w-70" [(ngModel)]="stake3[index]">
+        </ng-container>
+      </div>
+      <div class="mt-1 mr-2">
+        <button class="btn  button-first-row w-100" (click)="onEditableStake()">Edit Stake <i
+            class="fa fa-edit"></i></button>
+      </div>
+      <div class="mt-2 ml-3">
+        <p>If won, you will have a profit of {{hoverprofit}}</p>
+      </div>
+      <div class="mt-2 ml-3">
+        <button class="btn btn-cancel  button-first-row w-130" (click)="resetStake()">Cancel </button>
+        <button class="btn btn-save button-first-row w-130" (click)="onSave()" *ngIf="!editableStake">Save Bet</button>
+
+
+      </div>
+    </div>
+  </div>
+</div>
